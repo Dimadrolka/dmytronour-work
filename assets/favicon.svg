@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#14211e"/>
+  <text x="11" y="43" fill="#f7f5ef" font-family="Arial, sans-serif" font-size="35" font-weight="700" letter-spacing="-5">dn</text>
+  <circle cx="51" cy="44" r="4" fill="#d8ef72"/>
+</svg>
