@@ -112,6 +112,7 @@ h2 em { font-size: 1.06em; color: #d9dccd; }
 .link-arrow span { transition: transform .35s var(--ease); }
 .link-arrow:hover span { transform: translate(2px, -2px); }
 .link-arrow:hover { color: var(--lime); }
+.link-quiet { color: var(--muted); border-bottom-color: var(--line-2); }
 .chip-btn { min-height: 34px; padding: 0 13px; border: 1px solid var(--line-2); border-radius: 999px; background: transparent; color: var(--muted); font: 500 11.5px/1 var(--font-mono); letter-spacing: .04em; cursor: pointer; transition: color .2s ease, border-color .2s ease, background .2s ease; }
 .chip-btn:hover, .chip-btn[aria-pressed="true"] { color: var(--ink); border-color: var(--lime); background: var(--lime); }
 .pulse { position: relative; display: inline-block; flex: 0 0 auto; width: 7px; height: 7px; border-radius: 50%; background: var(--lime); }
@@ -264,6 +265,7 @@ html:not(.js) .hoop-photo { clip-path: none; }
 .lm-thread.is-mine { stroke-width: 3; }
 .lm-glow.is-mine { stroke-width: 14; opacity: .2; }
 .lm-braid.is-mine { stroke-width: 2.8; }
+.lm-sub-short { display: none; }
 .lm-zenny { transform-box: fill-box; transform-origin: 50% 100%; }
 .loom.is-shipped .lm-zenny { animation: zenny-bob 2.6s ease-in-out infinite; }
 @keyframes zenny-bob { 0%, 100% { transform: translateY(0) rotate(0deg); } 30% { transform: translateY(-5px) rotate(-3deg); } 60% { transform: translateY(-2px) rotate(2deg); } }
@@ -280,7 +282,7 @@ html:not(.js) .hoop-photo { clip-path: none; }
 .receipt-row i { width: 8px; height: 8px; border-radius: 50%; background: var(--c); box-shadow: 0 0 12px var(--c); }
 .receipt-labels { padding: 14px 0; color: var(--faint); font: 500 11px/1.4 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; }
 .receipt-labels span:first-child { font-weight: 500; }
-.receipt-row.receipt-mine { margin-top: -1px; padding-inline: 16px; border: 1px solid rgba(214, 242, 107, .35); border-radius: 14px; background: linear-gradient(90deg, rgba(214, 242, 107, .09), rgba(214, 242, 107, .02)); }
+.receipt-row.receipt-mine { margin: -1px -16px 0; padding-inline: 16px; border: 1px solid rgba(214, 242, 107, .35); border-radius: 14px; background: linear-gradient(90deg, rgba(214, 242, 107, .09), rgba(214, 242, 107, .02)); }
 .receipt-row.receipt-mine span:first-child { color: var(--lime); }
 .receipt-row.receipt-mine span:nth-child(2) { color: var(--text); }
 .receipt-foot { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(24px, 4vw, 64px); margin-top: 36px; }
@@ -546,6 +548,7 @@ html:not(.js) .hoop-photo { clip-path: none; }
   .receipt-row { grid-template-columns: 1fr; gap: 6px; padding: 18px 0; }
   .receipt-labels { display: none; }
   .receipt-foot { grid-template-columns: 1fr; }
+  .receipt-row.receipt-mine { margin-inline: -12px; padding-inline: 12px; }
   .colophon ul { grid-template-columns: 1fr; }
 }
 
@@ -600,7 +603,9 @@ html:not(.js) .hoop-photo { clip-path: none; }
   .lm-name { font-size: 27px; }
   .lm-take { display: none; }
   .lm-card .lm-card-title { font-size: 20px; }
-  .lm-card .lm-card-sub { font-size: 13px; }
+  .lm-card .lm-card-sub { font-size: 12.5px; }
+  .lm-sub-long { display: none; }
+  .lm-sub-short { display: inline; }
   .colophon li { flex-direction: column; gap: 4px; }
   .footer-bar { justify-content: flex-start; gap: 12px 24px; }
 }

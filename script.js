@@ -543,7 +543,8 @@
     make("rect", { x: 616, y: 184, width: 74, height: 22, rx: 11 }, badge);
     make("text", { x: 653, y: 199, "text-anchor": "middle" }, badge).textContent = "SHIPPED";
     make("text", { x: 616, y: 240, class: "lm-card-title" }, card).textContent = "CreatorZen";
-    make("text", { x: 616, y: 260, class: "lm-card-sub" }, card).textContent = "5,000+ downloads";
+    make("text", { x: 616, y: 260, class: "lm-card-sub lm-sub-long" }, card).textContent = "5,000+ downloads";
+    make("text", { x: 616, y: 260, class: "lm-card-sub lm-sub-short" }, card).textContent = "5K+ downloads";
     make("image", { href: "assets/zenny.webp", x: 630, y: 272, width: 104, height: 104, class: "lm-zenny" }, card);
 
     const setDash = (path) => {
