@@ -2,26 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#111827" />
-    <meta name="description" content="Dmytro Nour combines customer support, product operations, and AI workflows. Explore shipped products, practical decisions, and ways to get in touch." />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Dmytro Nour — AI Product Builder · Support, Ops &amp; Automation</title>
+    <meta name="description" content="I study the best products, pull one thread from each and weave something new. AI product builder with a customer-support core: three apps shipped solo, 5,000+ organic downloads. Open to SaaS and startup teams." />
+    <meta name="theme-color" content="#0a0b0a" />
     <meta name="author" content="Dmytro Nour" />
     <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.dmytronour.work/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Dmytro Nour" />
-    <meta property="og:title" content="Dmytro Nour — AI &amp; Technical Support, Product Operations" />
-    <meta property="og:description" content="Customer-first technical problem solving, AI workflows, and shipped products." />
+    <meta property="og:title" content="Dmytro Nour — Woven from the best. Built to ship." />
+    <meta property="og:description" content="AI product builder with a customer-support core. Three apps shipped solo, 5,000+ organic downloads. Looking for a team to build bigger things with." />
     <meta property="og:url" content="https://www.dmytronour.work/" />
-    <meta property="og:image" content="https://www.dmytronour.work/assets/dmytro-portrait.jpg" />
-    <meta name="twitter:card" content="summary" />
-    <link rel="canonical" href="https://www.dmytronour.work/" />
+    <meta property="og:image" content="https://www.dmytronour.work/assets/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-    <link rel="preload" as="image" href="assets/dmytro-portrait.jpg" />
+    <link rel="preload" href="assets/weave.json" as="fetch" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Dmytro Nour — AI &amp; Technical Support, Product Operations</title>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -29,251 +31,585 @@
         "name": "Dmytro Nour",
         "url": "https://www.dmytronour.work/",
         "image": "https://www.dmytronour.work/assets/dmytro-portrait.jpg",
-        "jobTitle": "AI Product & Operations Builder",
+        "jobTitle": "AI Product Builder",
         "email": "mailto:dmitri.nour@gmail.com",
         "homeLocation": { "@type": "Place", "name": "Athens, Greece" },
+        "knowsLanguage": ["en", "uk", "ru", "pl"],
         "sameAs": ["https://www.linkedin.com/in/dmytro-nour-6ab7611bb/"]
       }
     </script>
+    <script>document.documentElement.classList.add("js");</script>
     <script src="script.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+    <div class="spotlight" aria-hidden="true"></div>
+    <div class="thread-progress" aria-hidden="true"><span></span></div>
 
-    <header class="site-header" id="top">
-      <div class="header-inner shell">
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
         <a class="brand" href="#top" aria-label="Dmytro Nour, back to top">
-          <span class="brand-mark" aria-hidden="true">dn<span>.</span></span>
+          <span class="brand-mark" aria-hidden="true">dn<i>.</i></span>
           <span class="brand-name">Dmytro Nour</span>
         </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+        <nav class="site-nav" aria-label="Main">
+          <a href="#work">Work</a>
+          <a href="#method">Method</a>
+          <a href="#fit">Where I fit</a>
+          <a href="#story">Story</a>
+        </nav>
+        <div class="header-meta">
+          <span class="status-pill"><span class="pulse" aria-hidden="true"></span>Open to roles</span>
+          <span class="clock" title="Local time in Athens"><span data-clock>--:--</span> ATH</span>
+          <a class="btn btn-lime btn-sm" href="#contact" data-magnetic>Let's talk <span aria-hidden="true">↗</span></a>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-menu-toggle>
           <span></span><span></span>
         </button>
-        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-          <a href="#work">Work</a>
-          <a href="#capabilities">What I do</a>
-          <a href="#approach">How I work</a>
-          <a href="#about">About</a>
-          <a class="nav-contact" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="mobile-menu" id="mobile-menu" data-menu hidden>
+        <nav class="shell" aria-label="Mobile">
+          <a href="#work"><span>01</span>Work</a>
+          <a href="#method"><span>02</span>Method</a>
+          <a href="#fit"><span>03</span>Where I fit</a>
+          <a href="#story"><span>04</span>Story</a>
+          <a href="#contact"><span>05</span>Contact</a>
+          <a class="mobile-menu-cv" href="assets/Dmytro_Nour_Resume.pdf" type="application/pdf" download="Dmytro_Nour_Resume.pdf">Download CV (PDF) <span aria-hidden="true">↓</span></a>
+          <p class="mobile-menu-foot"><span class="pulse" aria-hidden="true"></span>Open to roles · Athens · Remote / EU</p>
         </nav>
       </div>
     </header>
 
     <main id="main">
-      <section class="hero shell" aria-labelledby="hero-title">
-        <div class="hero-copy-wrap">
-          <div class="eyebrow hero-eyebrow"><span class="status-dot" aria-hidden="true"></span><span>OPEN TO AI / TECHNICAL SUPPORT</span><span class="eyebrow-extra">&amp; PRODUCT OPERATIONS</span></div>
-          <h1 id="hero-title">I turn messy problems into <em>working systems.</em></h1>
-          <p class="hero-description">I connect customer signals, product judgment, and AI tools to solve technical problems and improve the systems behind them.</p>
-          <div class="hero-actions">
-            <a class="button button-dark" href="#work">Explore my work <span aria-hidden="true">↘</span></a>
-            <a class="text-link" href="assets/Dmytro_Nour_Resume.pdf" type="application/pdf" download="Dmytro_Nour_Resume.pdf">Download résumé <span aria-hidden="true">↓</span></a>
-          </div>
-        </div>
-        <figure class="hero-portrait">
-          <div class="portrait-kicker" aria-hidden="true"><span class="spark-mark">✳</span> HUMAN CONTEXT + USEFUL SYSTEMS</div>
-          <div class="portrait-frame">
-            <img src="assets/dmytro-portrait.jpg" alt="Portrait of Dmytro Nour" width="1254" height="1254" fetchpriority="high" />
-          </div>
-          <figcaption><span>DMYTRO NOUR</span><span>ATHENS · OPEN TO EUROPE</span></figcaption>
-        </figure>
-      </section>
-
-      <section class="proof-strip" aria-label="Career highlights">
-        <div class="shell proof-inner">
-          <div class="proof-item"><strong>5,000+</strong><span>organic CreatorZen downloads</span></div>
-          <div class="proof-item"><strong>0 → 1</strong><span>consumer &amp; B2B products shipped</span></div>
-          <div class="proof-item"><strong>2021–24</strong><span>customer-facing roles at Nerdify &amp; Wizz Air</span></div>
-        </div>
-      </section>
-
-      <section class="synthesis-section" aria-labelledby="synthesis-title">
-        <div class="shell synthesis-inner">
-          <div class="synthesis-copy">
-            <span class="synthesis-signature" aria-hidden="true">✳</span>
-            <h2 id="synthesis-title">Different signals.<br /><em>One clear direction.</em></h2>
-            <p>I take the strongest parts of a customer insight, a product idea, and a technical possibility, then make them work together as one useful experience.</p>
-          </div>
-          <div class="synthesis-diagram" aria-label="Customer signals, product judgment, and AI tools come together to create a working system">
-            <div class="signal signal-one"><span>01</span><strong>Customer signal</strong><i aria-hidden="true">↘</i></div>
-            <div class="signal signal-two"><span>02</span><strong>Product judgment</strong><i aria-hidden="true">→</i></div>
-            <div class="signal signal-three"><span>03</span><strong>AI + technical tools</strong><i aria-hidden="true">↗</i></div>
-            <div class="synthesis-result"><span class="result-orbit" aria-hidden="true">✳</span><strong>A working system</strong><small>Designed for people. Tested in reality.</small></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="work-section section-pad" id="work" aria-labelledby="work-title">
-        <div class="shell">
-          <div class="section-heading section-heading-wide">
-            <div><p class="section-index">Selected work</p><h2 id="work-title">Proof is in <em>the decisions.</em></h2></div>
-            <p>Products built, tested, and improved in the real world. The interesting part is what the evidence changed.</p>
-          </div>
-
-          <article class="flagship-case" aria-labelledby="creatorzen-title">
-            <div class="flagship-copy">
-              <div class="case-topline"><span>Flagship / iOS product</span><span class="case-number">01</span></div>
-              <div class="case-title-row"><h3 id="creatorzen-title">CreatorZen<span class="case-period">.</span></h3><span class="case-tag">Live product</span></div>
-              <p class="case-lead">An AI-powered iOS assistant that helps creators turn ideas into a clear plan, while making space for low-energy days.</p>
-              <div class="metric-callout"><strong>5,000+</strong><span>organic downloads<br />and real users to learn from</span></div>
-              <div class="case-story-grid">
-                <div><p class="mini-label">The challenge</p><p>Generic AI ideas ignore the creator’s context. An empty onboarding form makes the first useful result harder to reach.</p></div>
-                <div><p class="mini-label">What I worked on</p><p>Product concept, onboarding, personalized ideas, planning, energy check-ins, AI quality, analytics, QA, and release iteration.</p></div>
-              </div>
-              <p class="case-learning"><span class="mini-label">A decision that mattered</span> I worked on importing public creator-profile context with Apify, LLM analysis, and Supabase. The output stays editable, with fallback paths when source data is incomplete. PostHog and user feedback help me find where activation breaks.</p>
-              <a class="underlined-link" href="https://creatorzen.ai/" target="_blank" rel="noopener noreferrer">Explore CreatorZen <span aria-hidden="true">↗</span></a>
+      <!-- 01 · Hero -->
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <canvas class="hero-threads" aria-hidden="true"></canvas>
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>AI product builder · Support · Ops<span class="eyebrow-extra">&nbsp;· Automation</span></p>
+            <h1 class="hero-title" id="hero-title">
+              <span class="line"><span>Woven from</span></span>
+              <span class="line"><span>the best.</span></span>
+              <span class="line"><em>Built to ship.</em></span>
+            </h1>
+            <p class="hero-lead">I'm Dmytro Nour. I study the best products in any category, pull one thread from each, and weave something that didn't exist before. Three apps shipped with no team and almost no budget — 5,000+ organic downloads so far. <strong>Now I want to build bigger things with a team.</strong></p>
+            <div class="hero-actions">
+              <a class="btn btn-lime" href="#contact" data-magnetic>Hire me <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-ghost" href="#work">See what I've shipped <span aria-hidden="true">↓</span></a>
+              <a class="hero-cv" href="assets/Dmytro_Nour_Resume.pdf" type="application/pdf" download="Dmytro_Nour_Resume.pdf">CV · PDF <span aria-hidden="true">↓</span></a>
             </div>
-            <div class="flagship-visual" aria-label="CreatorZen App Store visuals">
-              <div class="visual-meta"><span>CREATORZEN / ON THE APP STORE</span><span class="visual-icon" aria-hidden="true">✳</span></div>
-              <div class="product-gallery">
-                <img class="product-shot shot-left" src="assets/creatorzen-02.webp" alt="CreatorZen App Store visual showing personalized content ideas" width="580" height="1260" loading="lazy" />
-                <img class="product-shot shot-main" src="assets/creatorzen-01.webp" alt="CreatorZen App Store visual introducing the AI creator companion" width="580" height="1260" loading="lazy" />
-                <img class="product-shot shot-right" src="assets/creatorzen-04.webp" alt="CreatorZen App Store visual showing a publish-ready plan" width="580" height="1260" loading="lazy" />
+            <ul class="hero-proof" aria-label="Products">
+              <li><i style="--c: var(--violet)"></i><strong>CreatorZen</strong> iOS · live</li>
+              <li><i style="--c: var(--amber)"></i><strong>LifeTraject</strong> iOS · live</li>
+              <li><i style="--c: var(--lime)"></i><strong>FounderDistro</strong> B2B SaaS</li>
+            </ul>
+          </div>
+
+          <figure class="hoop-wrap">
+            <div class="hoop" data-hoop>
+              <div class="hoop-ring" aria-hidden="true"><span class="hoop-screw"></span></div>
+              <div class="hoop-paper">
+                <canvas class="hoop-canvas" role="img" aria-label="Portrait of Dmytro Nour, woven from a single continuous thread"></canvas>
+                <canvas class="hoop-needle" aria-hidden="true"></canvas>
+                <img class="hoop-photo" src="assets/portrait-hoop.webp" alt="" width="800" height="800" decoding="async" />
+                <span class="hoop-hint" aria-hidden="true">Hover to see the photo</span>
               </div>
-              <div class="visual-bottom"><span class="pulse-dot" aria-hidden="true"></span> A real product, built for the messy middle of creating.</div>
+              <ol class="hoop-notes" aria-label="Threads I'm woven from">
+                <li class="note note-1" data-at="0.18"><span class="note-dot"></span><span class="note-body"><b>Thread 01</b>Hearing what customers mean · Nerdify</span></li>
+                <li class="note note-2" data-at="0.42"><span class="note-dot"></span><span class="note-body"><b>Thread 02</b>Calm under pressure · Wizz Air</span></li>
+                <li class="note note-3" data-at="0.66"><span class="note-dot"></span><span class="note-body"><b>Thread 03</b>Shipping to real users · CreatorZen</span></li>
+                <li class="note note-4" data-at="0.9"><span class="note-dot"></span><span class="note-body"><b>Thread 04</b>Honest no-go calls · FounderDistro</span></li>
+              </ol>
+            </div>
+            <figcaption class="hoop-caption">
+              <span class="hoop-caption-title">Self-portrait · one continuous thread</span>
+              <span class="hoop-counter"><span data-weave-count>0</span> / 4,200 passes · 320 pins</span>
+              <span class="hoop-controls">
+                <button class="chip-btn" type="button" data-reweave>↻ Re-weave</button>
+                <button class="chip-btn" type="button" data-photo aria-pressed="false">Show photo</button>
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Proof numbers -->
+      <section class="proof" id="proof" aria-label="Highlights">
+        <div class="shell proof-grid">
+          <div class="stat" data-reveal>
+            <strong><span data-count="5000">5,000</span>+</strong>
+            <span>organic downloads of CreatorZen — zero ad spend</span>
+          </div>
+          <div class="stat" data-reveal style="--d: 80ms">
+            <strong><span data-count="1790">1,790</span></strong>
+            <span>commits shipped in the last 12 months, almost all solo</span>
+          </div>
+          <div class="stat" data-reveal style="--d: 160ms">
+            <strong><span data-count="18">18</span><small>days</small></strong>
+            <span>from an empty repo to a launched B2B AI SaaS</span>
+          </div>
+          <div class="stat" data-reveal style="--d: 240ms">
+            <strong><span data-count="160">160</span>+</strong>
+            <span>iOS builds shipped to TestFlight and the App Store</span>
+          </div>
+          <div class="stat" data-reveal style="--d: 320ms">
+            <strong>4<small>+1</small></strong>
+            <span>languages: EN · UA · RU · PL — and learning Greek</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>Customer empathy</span><i>✳</i><span>Bug reproduction</span><i>✳</i><span>Product ops</span><i>✳</i><span>AI workflows</span><i>✳</i><span>PostHog funnels</span><i>✳</i><span>Onboarding</span><i>✳</i><span>Pre-mortems</span><i>✳</i><span>Release QA</span><i>✳</i><span>Prompt design</span><i>✳</i><span>Documentation</span><i>✳</i><span>Shipping</span><i>✳</i>
+          <span>Customer empathy</span><i>✳</i><span>Bug reproduction</span><i>✳</i><span>Product ops</span><i>✳</i><span>AI workflows</span><i>✳</i><span>PostHog funnels</span><i>✳</i><span>Onboarding</span><i>✳</i><span>Pre-mortems</span><i>✳</i><span>Release QA</span><i>✳</i><span>Prompt design</span><i>✳</i><span>Documentation</span><i>✳</i><span>Shipping</span><i>✳</i>
+        </div>
+      </div>
+
+      <!-- 02 · Method -->
+      <section class="method" id="method" aria-labelledby="method-title">
+        <div class="shell section-head" data-reveal>
+          <p class="kicker"><span>02</span>Method</p>
+          <h2 id="method-title">Every ingredient exists. <em>The combination doesn't.</em></h2>
+          <p class="section-lead">That's how I built CreatorZen. I studied the best creator tools and habit apps, took the one mechanism each got right, and wove them around the question none of them asks: <strong>how much can you actually create today?</strong></p>
+        </div>
+
+        <div class="loom" data-loom>
+          <div class="loom-sticky">
+            <div class="shell loom-grid">
+              <ol class="loom-steps">
+                <li class="is-active"><span class="loom-num">01</span><div><h3>Study the best</h3><p>I map the strongest products around the problem — creator tools, habit apps, AI writers — and write down what each one gets exactly right.</p></div></li>
+                <li><span class="loom-num">02</span><div><h3>Pull one thread from each</h3><p>One proven mechanic per product, with a note on <em>why</em> it works — and what has to change so it fits my users.</p></div></li>
+                <li><span class="loom-num">03</span><div><h3>Add the thread nobody had</h3><p>No creator tool asked how tired you are. So CreatorZen starts with a 10-second energy check-in that decides today's workload.</p></div></li>
+                <li><span class="loom-num">04</span><div><h3>Weave, ship, measure</h3><p>Everything in one loop — check in, pick, film, post. Then real users, PostHog funnels and an honest call on what to fix next.</p></div></li>
+              </ol>
+              <div class="loom-stage">
+                <svg class="loom-svg" viewBox="0 0 760 560" role="img" aria-label="Six products — Duolingo, vidIQ, Later, Typefully, Predis.ai and Captions — each give one thread, a seventh thread of my own adds energy awareness, and together they weave into CreatorZen" data-loom-svg></svg>
+                <div class="loom-progress" aria-hidden="true"><span></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="shell receipt" data-reveal>
+          <div class="receipt-head">
+            <p class="kicker"><span>✳</span>The receipt</p>
+            <p>From <em>“CreatorZen · Competitive landscape &amp; feature gaps”</em>, my research doc — checked against the code that actually shipped.</p>
+          </div>
+          <div class="receipt-table" role="table" aria-label="Products I studied, what they prove, and what I took for CreatorZen">
+            <div class="receipt-row receipt-labels" role="row"><span role="columnheader">Source</span><span role="columnheader">What it proves</span><span role="columnheader">What I took</span></div>
+            <div class="receipt-row" role="row"><span role="cell"><i style="--c: var(--coral)"></i>Duolingo</span><span role="cell">A character and a streak turn a tool into a daily habit.</span><span role="cell">Zenny — the camera mascot who picks today's idea — plus check-in streaks.</span></div>
+            <div class="receipt-row" role="row"><span role="cell"><i style="--c: var(--violet)"></i>vidIQ</span><span role="cell">An idea needs a reason to believe it, not just a title.</span><span role="cell">“Why this idea”, built only from real signals. I skipped their numeric score on purpose — a made-up number is a hallucination with a progress bar.</span></div>
+            <div class="receipt-row" role="row"><span role="cell"><i style="--c: var(--amber)"></i>Later</span><span role="cell">Content pillars turn random posts into a strategy.</span><span role="cell">Pillars set during onboarding — every idea belongs to one of yours.</span></div>
+            <div class="receipt-row" role="row"><span role="cell"><i style="--c: var(--cyan)"></i>Typefully</span><span role="cell">AI writing only works when it sounds like you.</span><span role="cell">Profile import: Apify + an LLM read your public profile, so day-one ideas already fit your niche and tone.</span></div>
+            <div class="receipt-row" role="row"><span role="cell"><i style="--c: var(--text)"></i>Predis.ai</span><span role="cell">The fewer steps from “nice idea” to “ready post”, the better.</span><span role="cell">One-tap plans: hook, script, caption and images on one screen.</span></div>
+            <div class="receipt-row" role="row"><span role="cell"><i style="--c: var(--blue)"></i>Captions</span><span role="cell">The script and the camera belong in one flow.</span><span role="cell">Scripts laid out line by line, teleprompter-style, inside the shooting plan.</span></div>
+            <div class="receipt-row receipt-mine" role="row"><span role="cell"><i style="--c: var(--lime)"></i>My thread</span><span role="cell">No creator tool asks how much you can do today.</span><span role="cell">A 10-second check-in → Energy Score from 0 to 100 → today's load: 1, 2 or 4 tasks.</span></div>
+          </div>
+          <div class="receipt-foot">
+            <p class="receipt-skip"><span class="fit-label">Refused to copy</span>A full scheduler, a social inbox, a video editor, an AI avatar studio. Crowded, expensive — and they would have turned CreatorZen into one more tool instead of a calm second pilot.</p>
+            <div class="receipt-web">
+              <span class="fit-label">Same method, on creatorzen.ai</span>
+              <p>~45 sites studied, one move taken from each:</p>
+              <ul class="web-threads">
+                <li><b>Opal</b>cinematic dark hero</li>
+                <li><b>Wispr Flow</b>serif italics, cream × dark rhythm</li>
+                <li><b>Halide</b>objects floating around the phone</li>
+                <li><b>Gentler Streak</b>“rest counts too” tone</li>
+                <li><b>Finch</b>the mascot as the emotional centre</li>
+                <li><b>Bevel</b>QR download for desktop visitors</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 · Work -->
+      <section class="work" id="work" aria-labelledby="work-title">
+        <div class="shell">
+          <div class="section-head" data-reveal>
+            <p class="kicker"><span>03</span>Selected work</p>
+            <h2 id="work-title">Shipped. Measured. <em>Decided.</em></h2>
+            <p class="section-lead">Every project here went all the way to real users — and taught me something I now bring to every team.</p>
+          </div>
+
+          <article class="case case-cz" aria-labelledby="cz-title" data-reveal>
+            <div class="case-copy">
+              <div class="case-meta"><span>01 · Flagship</span><span>iOS + Web · 2025 — now</span></div>
+              <h3 id="cz-title">CreatorZen<i>.</i></h3>
+              <p class="case-lead">An AI content coach that tells creators what to post today — hook, script, caption and images ready to film — and plans around their energy so they keep posting without burning out.</p>
+              <dl class="case-stats">
+                <div><dt>Organic downloads</dt><dd>5,000+</dd></div>
+                <div><dt>Commits</dt><dd>1,393</dd></div>
+                <div><dt>On the App Store</dt><dd>v2.6</dd></div>
+              </dl>
+              <ul class="case-points">
+                <li><b>Role</b> Founder — product, UX, AI pipelines, analytics, QA and support. All of it.</li>
+                <li><b>Loop</b> Energy check-in → today's pick → a ready-to-film plan, every morning.</li>
+                <li><b>AI</b> Profile import with Apify + LLM analysis personalises ideas from day one, with fallbacks when data is thin.</li>
+                <li><b>Growth</b> PostHog funnels and user feedback show where activation breaks — then I fix it and ship.</li>
+              </ul>
+              <div class="chips"><span>Next.js</span><span>Supabase</span><span>OpenAI</span><span>Apify</span><span>PostHog</span><span>iOS</span></div>
+              <div class="case-links">
+                <a class="link-arrow" href="https://creatorzen.ai/" target="_blank" rel="noopener noreferrer">creatorzen.ai <span aria-hidden="true">↗</span></a>
+                <a class="link-arrow" href="https://apps.apple.com/gr/app/creatorzen/id6755627819" target="_blank" rel="noopener noreferrer">App Store <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+            <div class="case-visual cz-visual">
+              <div class="cz-glow" aria-hidden="true"></div>
+              <div class="cz-phones" data-tilt>
+                <img class="phone phone-l" src="assets/creatorzen-02.webp" alt="CreatorZen screen: today's personalised content pick" width="580" height="1260" loading="lazy" decoding="async" />
+                <img class="phone phone-c" src="assets/creatorzen-01.webp" alt="CreatorZen screen: Zenny, the AI coach, says hello" width="580" height="1260" loading="lazy" decoding="async" />
+                <img class="phone phone-r" src="assets/creatorzen-04.webp" alt="CreatorZen screen: a ready-to-publish content plan" width="580" height="1260" loading="lazy" decoding="async" />
+              </div>
+              <figure class="spark" aria-label="Commits per week on CreatorZen, August 2025 to May 2026">
+                <figcaption><span>Commits / week</span><span>Aug '25 → May '26</span></figcaption>
+                <div class="spark-bars" data-bars="1,0,0,0,0,0,0,0,0,0,0,121,165,5,149,18,62,146,148,0,8,0,0,0,160,199,0,21,14,51,15,27,6,0,26,7,0,0,10,33,0,1"></div>
+              </figure>
             </div>
           </article>
 
-          <div class="other-work">
-            <article class="project-card founder-card" aria-labelledby="founder-title">
-              <div class="project-card-top"><span>02 / B2B AI SaaS experiment</span><span aria-hidden="true">↗</span></div>
-              <h3 id="founder-title">FounderDistro</h3>
-              <p class="project-strapline">Not every shipped product should become a company.</p>
-              <p>I built and launched a workflow that turned company context into founder-led content strategy and editable posts. I tested the proposition, saw weak activation and conversion, investigated the funnel, and made a data-informed no-go decision.</p>
-              <div class="decision-track" aria-label="FounderDistro decision sequence"><span>Shipped</span><i></i><span>Measured</span><i></i><strong>Stopped</strong></div>
-              <a class="underlined-link" href="https://founderdistro.com/" target="_blank" rel="noopener noreferrer">See the product <span aria-hidden="true">↗</span></a>
+          <div class="case-pair">
+            <article class="case case-fd" aria-labelledby="fd-title" data-reveal>
+              <div class="case-meta"><span>02 · B2B AI SaaS</span><span>March 2026</span></div>
+              <h3 id="fd-title">FounderDistro</h3>
+              <p class="case-lead">Paste your company URL, get a week of founder-led content. Built, launched and measured — then deliberately stopped.</p>
+              <figure class="fd-chart" aria-label="262 commits over 18 days, 12 to 29 March 2026">
+                <div class="fd-bars" data-bars="2,26,17,11,14,33,12,19,15,10,9,4,22,21,29,15,2,1"></div>
+                <figcaption><span>Mar 12</span><span><b>262 commits · 18 days</b></span><span>Mar 29</span></figcaption>
+              </figure>
+              <ol class="decision" aria-label="Decision track">
+                <li>Shipped</li>
+                <li>Measured</li>
+                <li class="is-stop">Stopped</li>
+              </ol>
+              <p class="case-note">Activation and conversion didn't clear the bar I set before launch — so I shut it down instead of burning months. The hardest call, and the one I'm proudest of.</p>
+              <div class="chips"><span>Next.js</span><span>Supabase</span><span>Claude</span><span>Perplexity</span><span>Firecrawl</span><span>Sentry</span></div>
+              <a class="link-arrow" href="https://founderdistro.com/" target="_blank" rel="noopener noreferrer">founderdistro.com <span aria-hidden="true">↗</span></a>
             </article>
-            <article class="project-card life-card" aria-labelledby="life-title">
-              <div class="project-card-top"><span>03 / Consumer iOS product</span><span aria-hidden="true">↗</span></div>
-              <div class="life-orbit" aria-hidden="true"><span></span><span></span><span></span><b>LT</b></div>
-              <h3 id="life-title">LifeTraject</h3>
-              <p>A B2C productivity and life-planning iOS product from my journey learning mobile product execution, UX, and user workflows.</p>
-              <a class="underlined-link" href="https://apps.apple.com/au/app/lifetraject/id6762873892" target="_blank" rel="noopener noreferrer">View on App Store <span aria-hidden="true">↗</span></a>
-            </article>
-          </div>
-        </div>
-      </section>
 
-      <section class="capabilities-section section-pad" id="capabilities" aria-labelledby="capabilities-title">
-        <div class="shell">
-          <div class="section-heading inverted">
-            <div><h2 id="capabilities-title">Useful across <em>the gaps.</em></h2></div>
-            <p>My strongest work sits where a customer problem needs product judgment, technical curiosity, and someone willing to own the follow-through.</p>
-          </div>
-          <div class="capability-grid">
-            <article class="capability-card featured-capability">
-              <div class="capability-number">01 <span aria-hidden="true">↗</span></div>
-              <h3>AI &amp; technical product support</h3>
-              <p>Clarify the real issue, reproduce it, trace a workflow across tools, communicate a useful answer, and turn recurring friction into product feedback.</p>
-              <div class="capability-tags"><span>Issue triage</span><span>Customer communication</span><span>Bug reproduction</span></div>
-            </article>
-            <article class="capability-card">
-              <div class="capability-number">02 <span aria-hidden="true">↗</span></div>
-              <h3>Product &amp; product operations</h3>
-              <p>Investigate onboarding and activation, structure requirements, run QA, document decisions, and use behavior to decide what deserves attention.</p>
-              <div class="capability-tags"><span>Discovery</span><span>PostHog</span><span>Release QA</span></div>
-            </article>
-            <article class="capability-card">
-              <div class="capability-number">03 <span aria-hidden="true">↗</span></div>
-              <h3>AI workflows &amp; automation</h3>
-              <p>Connect context, APIs, and LLMs into inspectable workflows with human review, sensible fallbacks, and clear failure states.</p>
-              <div class="capability-tags"><span>APIs</span><span>Automation</span><span>AI quality</span></div>
-            </article>
-            <article class="capability-card">
-              <div class="capability-number">04 <span aria-hidden="true">↗</span></div>
-              <h3>Implementation &amp; customer operations</h3>
-              <p>Learn an unfamiliar system, set up practical workflows, troubleshoot integrations, guide users, and write down what should be repeatable.</p>
-              <div class="capability-tags"><span>Onboarding</span><span>Documentation</span><span>Handoffs</span></div>
+            <article class="case case-lt" aria-labelledby="lt-title" data-reveal style="--d: 120ms">
+              <div class="case-meta"><span>03 · Consumer iOS</span><span>2026 · live</span></div>
+              <div class="lt-art" aria-hidden="true"><img src="assets/lifetraject-trajectory.webp" alt="" width="560" height="560" loading="lazy" decoding="async" /></div>
+              <h3 id="lt-title">LifeTraject</h3>
+              <p class="case-lead">An honest goal forecast. It measures the gap between what you plan and what you actually do — and predicts when you'll really get there.</p>
+              <ul class="case-points compact">
+                <li>React Native + Expo, Supabase Edge Functions, RevenueCat.</li>
+                <li>Four pre-mortem rounds reshaped V4: imagine it already failed, then design the failure out.</li>
+              </ul>
+              <div class="chips"><span>Expo</span><span>Supabase</span><span>RevenueCat</span><span>LLM analysis</span></div>
+              <a class="link-arrow" href="https://apps.apple.com/au/app/lifetraject/id6762873892" target="_blank" rel="noopener noreferrer">App Store <span aria-hidden="true">↗</span></a>
             </article>
           </div>
-          <div class="developing-note"><span class="note-symbol" aria-hidden="true">✳</span><p><strong>Also building:</strong> practical Salesforce / RevOps capability through CRM workflow projects, including data quality, routing, automation, and testing.</p></div>
-        </div>
-      </section>
 
-      <section class="approach-section section-pad" id="approach" aria-labelledby="approach-title">
-        <div class="shell">
-          <div class="section-heading">
-            <div><h2 id="approach-title">Start with the signal.<br /><em>End with something usable.</em></h2></div>
-            <p>A support conversation, a stalled funnel, or a manual workaround can all point to the same thing: a system that needs to work better.</p>
-          </div>
-          <div class="approach-flow">
-            <article><span class="approach-step">01 / Understand</span><h3>Find the actual problem.</h3><p>Listen to users, reproduce the issue, inspect the workflow, and separate symptoms from causes.</p></article>
-            <article><span class="approach-step">02 / Make</span><h3>Build the smallest useful fix.</h3><p>Prototype, connect tools, write clear requirements, and put a working version in front of reality.</p></article>
-            <article><span class="approach-step">03 / Learn</span><h3>Check what changed.</h3><p>Use feedback and analytics, test failure paths, improve what works, and document the new process.</p></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="principles-section section-pad" id="principles" aria-labelledby="principles-title">
-        <div class="shell">
-          <div class="principles-heading">
-            <h2 id="principles-title">The ideas <em>I work by.</em></h2>
-            <p>Three thoughts in my own words. They guide how I choose, combine, and improve what I build.</p>
-          </div>
-          <div class="principles-list">
-            <blockquote class="principle"><span class="principle-number">01 / SYNTHESIZE</span><p>The best ideas rarely arrive whole. I find the strongest pieces, give them one purpose, and build something that didn’t exist before.</p></blockquote>
-            <blockquote class="principle"><span class="principle-number">02 / STAY CURIOUS</span><p>A problem is an invitation to look closer. The real work starts when the obvious answer isn’t enough.</p></blockquote>
-            <blockquote class="principle"><span class="principle-number">03 / MAKE IT MATTER</span><p>I want technology to feel like momentum: clear, useful, and trustworthy when real life gets messy.</p></blockquote>
-          </div>
-          <p class="principles-signature">— Dmytro Nour</p>
-        </div>
-      </section>
-
-      <section class="about-section section-pad" id="about" aria-labelledby="about-title">
-        <div class="shell about-grid">
-          <div class="about-main">
-            <h2 id="about-title">I learned product <em>by building.</em></h2>
-            <p>Over the last few years, I’ve taken ideas from a blank page to working software, real users, support problems, analytics dashboards, launches, and decisions about what not to build next.</p>
-            <p>Before that, customer-facing work taught me to stay calm when the situation is unclear, ask better questions, and own the next step. That perspective still shapes how I design products and workflows.</p>
-            <p>I’m looking to bring that builder mindset into a strong team: with honest feedback, shared standards, and more complex problems than any one person can solve alone.</p>
-          </div>
-          <aside class="experience-panel" aria-labelledby="experience-title">
-            <div class="experience-head"><h3 id="experience-title">The foundation</h3><span>People → Product</span></div>
-            <div class="experience-item">
-              <span class="experience-date">2021 — 2022</span>
-              <h4>Nerdify</h4>
-              <p class="experience-role">Customer Support Representative</p>
-              <p>Clarified ambiguous requests and handled 6–8 parallel customer conversations during busy periods.</p>
+          <div class="lab" aria-labelledby="lab-title">
+            <div class="lab-head" data-reveal>
+              <h3 id="lab-title">The lab</h3>
+              <p>Side builds where I learn fastest — games, simulations and research that stretch how I think.</p>
             </div>
-            <div class="experience-item">
-              <span class="experience-date">2022 — 2024 · United Kingdom</span>
-              <h4>Wizz Air</h4>
-              <p class="experience-role">Cabin Crew / Customer Experience</p>
-              <p>Worked across international teams in a safety-critical, time-sensitive environment.</p>
+            <div class="lab-grid">
+              <article class="lab-card" data-reveal>
+                <div class="lab-top"><span>RevOps · Game</span><span class="tag">Playable</span></div>
+                <h4>RevOps Factory</h4>
+                <p>A Factorio-style game that teaches revenue operations: build the pipeline out of blocks, run it, watch it jam, explain why.</p>
+                <p class="lab-stack">React · PixiJS · React Flow · TypeScript · Vitest</p>
+              </article>
+              <article class="lab-card" data-reveal style="--d: 80ms">
+                <div class="lab-top"><span>Unity 6 · Game</span><span class="tag">Prototype</span></div>
+                <h4>Something's Off</h4>
+                <p>A first-person causal investigation game: symptoms aren't causes. Inspect the evidence, form a hypothesis, fix the root — basically tech support, as a game.</p>
+                <p class="lab-stack">Unity · C# · systems design</p>
+              </article>
+              <article class="lab-card" data-reveal style="--d: 160ms">
+                <div class="lab-top"><span>Quant research</span><span class="tag tag-stop">No-go</span></div>
+                <h4>Trading research bots</h4>
+                <p>Pre-registered hypotheses, six years of hourly data, out-of-sample tests and a negative control. No strategy survived — so no real money goes in.</p>
+                <p class="lab-stack">Python · Rust · statistics</p>
+              </article>
+              <article class="lab-card" data-reveal style="--d: 240ms">
+                <div class="lab-top"><span>AI · Health</span><span class="tag">Prototype</span></div>
+                <h4>VoiceGym</h4>
+                <p>An AI voice workout assistant that coaches you through a session hands-free.</p>
+                <p class="lab-stack">Next.js 15 · OpenAI · Supabase</p>
+              </article>
             </div>
-            <div class="experience-foot">Today: independent product work across consumer iOS and B2B AI SaaS.</div>
-          </aside>
+          </div>
+
+          <figure class="buildlog" data-reveal aria-labelledby="buildlog-title">
+            <figcaption class="buildlog-head">
+              <h3 id="buildlog-title">The build log</h3>
+              <p>Fourteen months, eight builds, one person.</p>
+            </figcaption>
+            <div class="buildlog-chart" style="--months: 14">
+              <div class="bl-months" aria-hidden="true"><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span></div>
+              <ul class="bl-rows">
+                <li style="--s: 0; --e: 14; --c: var(--violet)"><span class="bl-name">CreatorZen</span><span class="bl-bar"><em>idea → App Store → v2.6</em></span></li>
+                <li style="--s: 5.7; --e: 9.2; --c: var(--amber)"><span class="bl-name">LifeTraject</span><span class="bl-bar"><em>iOS launch</em></span></li>
+                <li style="--s: 7.4; --e: 8; --c: var(--lime)"><span class="bl-name">FounderDistro</span><span class="bl-bar"><em>18 days</em></span></li>
+                <li style="--s: 8; --e: 8.4; --c: var(--coral)"><span class="bl-name">Polymarket bot</span><span class="bl-bar"></span></li>
+                <li style="--s: 11.5; --e: 11.8; --c: var(--cyan)"><span class="bl-name">Something's Off</span><span class="bl-bar"></span></li>
+                <li style="--s: 11.6; --e: 12.4; --c: var(--text)"><span class="bl-name">RevOps Factory</span><span class="bl-bar"></span></li>
+                <li style="--s: 12.1; --e: 12.8; --c: var(--coral)"><span class="bl-name">Hyperliquid research</span><span class="bl-bar"></span></li>
+                <li style="--s: 13.3; --e: 14; --c: var(--lime)"><span class="bl-name">This site</span><span class="bl-bar"></span></li>
+              </ul>
+            </div>
+          </figure>
         </div>
       </section>
 
-      <section class="toolkit-section" aria-labelledby="toolkit-title">
-        <div class="shell toolkit-inner">
-          <div><p class="section-index">Tools &amp; context</p><h2 id="toolkit-title">Hands-on, <em>not hype.</em></h2></div>
-          <div class="toolkit-list">
-            <div><span>Build &amp; connect</span><p>Next.js · Supabase · REST / JSON · API integrations · GitHub</p></div>
-            <div><span>AI &amp; automation</span><p>OpenAI · Claude · Perplexity · Apify · Firecrawl · Make</p></div>
-            <div><span>Learn &amp; support</span><p>PostHog · SQL fundamentals · Zendesk · Figma · documentation</p></div>
-            <div><span>Languages</span><p>English C1 · Ukrainian native · Russian fluent · Polish conversational · Greek beginner</p></div>
+      <!-- 04 · Where I fit -->
+      <section class="fit paper" id="fit" aria-labelledby="fit-title">
+        <div class="shell">
+          <div class="section-head" data-reveal>
+            <p class="kicker"><span>04</span>Where I fit</p>
+            <h2 id="fit-title">Plug me in <em>where it hurts.</em></h2>
+            <p class="section-lead">On my own products I've been founder, support, QA, analyst and ops — often on the same day. Pick the problem you're hiring for.</p>
+          </div>
+
+          <div class="fit-ui" data-tabs data-reveal>
+            <div class="fit-tabs" role="tablist" aria-label="Roles I can fill">
+              <button role="tab" type="button" id="tab-support" aria-controls="panel-support" aria-selected="true">Customer &amp; tech support</button>
+              <button role="tab" type="button" id="tab-ops" aria-controls="panel-ops" aria-selected="false" tabindex="-1">Product operations</button>
+              <button role="tab" type="button" id="tab-ai" aria-controls="panel-ai" aria-selected="false" tabindex="-1">AI workflows</button>
+              <button role="tab" type="button" id="tab-impl" aria-controls="panel-impl" aria-selected="false" tabindex="-1">Implementation</button>
+              <button role="tab" type="button" id="tab-found" aria-controls="panel-found" aria-selected="false" tabindex="-1">Founding generalist</button>
+            </div>
+
+            <div class="fit-panel" role="tabpanel" id="panel-support" aria-labelledby="tab-support" tabindex="0">
+              <p class="fit-pain"><span>The pain</span>Tickets pile up, bug reports say “it doesn't work”, and engineering can't reproduce anything.</p>
+              <div class="fit-bring"><span class="fit-label">What I bring</span>
+                <ul>
+                  <li>Calm, precise written English (C1) — plus Ukrainian, Russian and Polish.</li>
+                  <li>Bug reports engineers love: steps, logs, expected vs actual, severity.</li>
+                  <li>6–8 parallel conversations without dropping context.</li>
+                  <li>Recurring tickets turned into fixes, macros and docs.</li>
+                </ul>
+              </div>
+              <div class="fit-proof"><span class="fit-label">Proof</span><p>Nerdify support · Wizz Air customer ops · I run support for my own apps.</p><span class="fit-label">Tools</span><p class="fit-tools">Zendesk · PostHog · Supabase logs · SQL · Sentry</p><a class="btn btn-ink" href="mailto:dmitri.nour@gmail.com?subject=Role%3A%20Customer%20%26%20technical%20support">Hire me for this <span aria-hidden="true">↗</span></a></div>
+            </div>
+
+            <div class="fit-panel" role="tabpanel" id="panel-ops" aria-labelledby="tab-ops" tabindex="0" hidden>
+              <p class="fit-pain"><span>The pain</span>Nobody owns the release checklist, the funnel, or the question “why did activation drop?”</p>
+              <div class="fit-bring"><span class="fit-label">What I bring</span>
+                <ul>
+                  <li>Event design and PostHog funnels that answer real questions.</li>
+                  <li>Release QA and versioning discipline across 160+ iOS builds.</li>
+                  <li>Specs, decision logs and pre-mortems before a line of code.</li>
+                  <li>Prioritisation from behaviour, not opinions.</li>
+                </ul>
+              </div>
+              <div class="fit-proof"><span class="fit-label">Proof</span><p>CreatorZen activation work · LifeTraject pre-mortems · FounderDistro's no-go call.</p><span class="fit-label">Tools</span><p class="fit-tools">PostHog · App Store Connect · EAS · Figma · SQL</p><a class="btn btn-ink" href="mailto:dmitri.nour@gmail.com?subject=Role%3A%20Product%20operations">Hire me for this <span aria-hidden="true">↗</span></a></div>
+            </div>
+
+            <div class="fit-panel" role="tabpanel" id="panel-ai" aria-labelledby="tab-ai" tabindex="0" hidden>
+              <p class="fit-pain"><span>The pain</span>The team repeats the same manual work every day, and “let's add AI” still hasn't shipped.</p>
+              <div class="fit-bring"><span class="fit-label">What I bring</span>
+                <ul>
+                  <li>LLM pipelines with structured outputs, fallbacks and human review.</li>
+                  <li>Scraping and enrichment with Apify and Firecrawl.</li>
+                  <li>The glue: Supabase Edge Functions, webhooks, Make.</li>
+                  <li>Cost- and quality-aware prompts, judged on real outputs.</li>
+                </ul>
+              </div>
+              <div class="fit-proof"><span class="fit-label">Proof</span><p>CreatorZen profile import · FounderDistro's URL-to-content pipeline.</p><span class="fit-label">Tools</span><p class="fit-tools">OpenAI · Claude · Gemini · Perplexity · Apify · Firecrawl · Make</p><a class="btn btn-ink" href="mailto:dmitri.nour@gmail.com?subject=Role%3A%20AI%20workflows%20%26%20automation">Hire me for this <span aria-hidden="true">↗</span></a></div>
+            </div>
+
+            <div class="fit-panel" role="tabpanel" id="panel-impl" aria-labelledby="tab-impl" tabindex="0" hidden>
+              <p class="fit-pain"><span>The pain</span>Customers sign, then stall in setup. Handoffs leak and nobody writes anything down.</p>
+              <div class="fit-bring"><span class="fit-label">What I bring</span>
+                <ul>
+                  <li>Fast ramp-up on unfamiliar systems — Salesforce, Unity and Rust, all self-taught.</li>
+                  <li>Onboarding flows that get people to first value quickly.</li>
+                  <li>Aviation-grade checklists and clean handoffs.</li>
+                  <li>Documentation people actually read.</li>
+                </ul>
+              </div>
+              <div class="fit-proof"><span class="fit-label">Proof</span><p>RevOps Factory · Wizz Air procedures · onboarding redesigns in CreatorZen.</p><span class="fit-label">Tools</span><p class="fit-tools">Salesforce · HubSpot · Supabase · Figma · Notion</p><a class="btn btn-ink" href="mailto:dmitri.nour@gmail.com?subject=Role%3A%20Implementation%20%26%20onboarding">Hire me for this <span aria-hidden="true">↗</span></a></div>
+            </div>
+
+            <div class="fit-panel" role="tabpanel" id="panel-found" aria-labelledby="tab-found" tabindex="0" hidden>
+              <p class="fit-pain"><span>The pain</span>You need someone who goes from rough idea to live-with-users without hand-holding.</p>
+              <div class="fit-bring"><span class="fit-label">What I bring</span>
+                <ul>
+                  <li>The full loop: research → design → build → launch → measure → decide.</li>
+                  <li>AI-native speed — a B2B SaaS launched in 18 days.</li>
+                  <li>Comfort with ambiguity, and ownership of outcomes.</li>
+                  <li>Taste trained by studying the best in every category.</li>
+                </ul>
+              </div>
+              <div class="fit-proof"><span class="fit-label">Proof</span><p>CreatorZen · FounderDistro · LifeTraject — three launches in twelve months.</p><span class="fit-label">Tools</span><p class="fit-tools">Next.js · Expo · Supabase · Vercel · Cursor · Claude Code</p><a class="btn btn-ink" href="mailto:dmitri.nour@gmail.com?subject=Role%3A%20Founding-team%20generalist">Hire me for this <span aria-hidden="true">↗</span></a></div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="contact-section" id="contact" aria-labelledby="contact-title">
-        <div class="shell contact-inner">
-          <h2 id="contact-title">Need someone who can connect <em>customers, product &amp; AI?</em></h2>
-          <p>I’m open to opportunities in AI / technical support, product operations, implementation, customer operations, and adjacent SaaS teams.</p>
-          <div class="contact-actions">
-            <a class="button button-accent" href="mailto:dmitri.nour@gmail.com?subject=Let's%20talk%20about%20a%20role">Email me <span aria-hidden="true">↗</span></a>
-            <a class="contact-social" href="assets/Dmytro_Nour_Resume.pdf" type="application/pdf" download="Dmytro_Nour_Resume.pdf">Download résumé (PDF) <span aria-hidden="true">↓</span></a>
-            <a class="contact-social" href="https://www.linkedin.com/in/dmytro-nour-6ab7611bb/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+      <!-- 05 · Mindset -->
+      <section class="mindset" aria-labelledby="mindset-title">
+        <div class="shell">
+          <p class="kicker" data-reveal><span>05</span>How I think</p>
+          <h2 class="sr-only" id="mindset-title">How I think</h2>
+          <p class="manifesto" data-manifesto>I don't wait for perfect conditions. No team, no funding, no permission — and I still shipped. When I hit a wall, I study how the best got past it, pull the thread, and <em>find a way.</em> My ambitions are bigger than my budget, and I know nobody builds anything great alone. So I'm looking for a team with harder problems than I can solve on my own — a place to <em>contribute from day one, and to grow.</em></p>
+          <p class="manifesto-sign" data-reveal>— Dmytro</p>
+
+          <div class="principles">
+            <article class="principle" data-reveal>
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M3 32h42M7 32c0-10 7.6-18 17-18s17 8 17 18M14 32v-9.5M24 32V14M34 32v-9.5" /></svg>
+              <h3>I always find a way.</h3>
+              <p>Responsibility isn't a trait, it's a habit. I own the outcome, not just my task — and if the road is closed, I build a bridge.</p>
+            </article>
+            <article class="principle" data-reveal style="--d: 70ms">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 10c14 0 16 14 20 14M4 24h20M4 38c14 0 16-14 20-14h20" /></svg>
+              <h3>Study the best, then combine.</h3>
+              <p>Originality is a new combination of proven threads. I write down what I take — and why it works.</p>
+            </article>
+            <article class="principle" data-reveal style="--d: 140ms">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="8" width="14" height="10" rx="2" /><rect x="29" y="30" width="14" height="10" rx="2" /><path d="M19 13h6a4 4 0 0 1 4 4v9a4 4 0 0 0 4 4" /></svg>
+              <h3>If I can't draw it, I don't get it yet.</h3>
+              <p>I visualise flows, systems and data before I build them. Diagrams are how I think.</p>
+            </article>
+            <article class="principle" data-reveal style="--d: 210ms">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17" /><path d="M24 13v11l7 5" /></svg>
+              <h3>Pre-mortem first.</h3>
+              <p>Imagine it already failed. List why. Design those failures out — then commit.</p>
+            </article>
+            <article class="principle" data-reveal style="--d: 280ms">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 40V26M18 40V16M30 40V22M42 40V8" /></svg>
+              <h3>Ship, measure, decide.</h3>
+              <p>Stopping a product is a result, not a failure. Data gets the final vote.</p>
+            </article>
+            <article class="principle" data-reveal style="--d: 350ms">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M42 30v-4l-16-10V7a3 3 0 0 0-6 0v9L4 26v4l16-5v10l-4 3v3l7-2 7 2v-3l-4-3V25z" /></svg>
+              <h3>Calm is a skill.</h3>
+              <p>Learned at 11,000 metres with a full cabin watching. Pressure makes me clearer, not louder.</p>
+            </article>
           </div>
-          <div class="contact-bottom"><span>dmitri.nour@gmail.com</span><span>Athens, Greece · Remote / hybrid · Open to relocate in Europe</span></div>
+        </div>
+      </section>
+
+      <!-- 06 · Story -->
+      <section class="story paper" id="story" aria-labelledby="story-title">
+        <div class="shell">
+          <div class="section-head" data-reveal>
+            <p class="kicker"><span>06</span>Story</p>
+            <h2 id="story-title">From the cabin <em>to the codebase.</em></h2>
+            <p class="section-lead">My path wasn't a straight line — which is exactly why I'm useful in the gaps between customers, product and tech.</p>
+          </div>
+
+          <div class="flight" data-flight>
+            <svg class="flight-svg" viewBox="0 0 1200 170" preserveAspectRatio="none" aria-hidden="true">
+              <path class="flight-track" d="M20 130 C 180 130, 220 40, 320 60 S 520 150, 620 110 S 800 20, 900 50 S 1080 120, 1180 40" />
+              <path class="flight-done" d="M20 130 C 180 130, 220 40, 320 60 S 520 150, 620 110 S 800 20, 900 50 S 1080 120, 1180 40" />
+            </svg>
+            <svg class="flight-plane" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" /></svg>
+            <ol class="flight-stops">
+              <li><span class="fs-year">2021</span><h3>Nerdify</h3><p class="fs-role">Customer support</p><p>Decoded vague requests in written English, 6–8 conversations at once.</p></li>
+              <li><span class="fs-year">2022 — 24</span><h3>Wizz Air · UK</h3><p class="fs-role">Cabin crew · customer experience</p><p>Safety-critical procedures, international crews, thousands of passengers. Calm, clarity, clean handoffs.</p></li>
+              <li><span class="fs-year">2025</span><h3>CreatorZen</h3><p class="fs-role">Founder · AI product builder</p><p>Taught myself to build with AI. Idea → App Store → 5,000+ organic downloads.</p></li>
+              <li><span class="fs-year">2026</span><h3>Three more products</h3><p class="fs-role">FounderDistro · LifeTraject · RevOps Factory</p><p>Faster cycles, deeper research, braver decisions.</p></li>
+              <li class="fs-next"><span class="fs-year">Next</span><h3>Your team</h3><p class="fs-role">Seat reserved</p><p>Bring me the hard problems.</p></li>
+            </ol>
+          </div>
+
+          <div class="story-facts" data-reveal>
+            <div><span class="fit-label">Learning</span><p>IBM AI Product Manager Professional Certificate — in progress. Salesforce &amp; RevOps through hands-on builds.</p></div>
+            <div><span class="fit-label">Education</span><p>Polish Matura and technical school diploma.</p></div>
+            <div><span class="fit-label">Languages</span><p>Ukrainian native · English C1 · Russian fluent · Polish conversational · Greek beginner.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Toolkit -->
+      <section class="toolkit" aria-labelledby="toolkit-title">
+        <div class="shell toolkit-head" data-reveal>
+          <h2 id="toolkit-title">The toolkit <em>I actually use.</em></h2>
+          <p>Picked for speed of learning, not for the résumé. I build with AI agents every day.</p>
+        </div>
+        <div class="marquee" aria-label="Tools">
+          <div class="marquee-track">
+            <span>Next.js</span><span>React</span><span>React Native · Expo</span><span>TypeScript</span><span>Supabase</span><span>Postgres</span><span>Edge Functions</span><span>Vercel</span><span>OpenAI</span><span>Claude</span><span>Gemini</span><span>Perplexity</span><span>Apify</span><span>Firecrawl</span>
+            <span aria-hidden="true">Next.js</span><span aria-hidden="true">React</span><span aria-hidden="true">React Native · Expo</span><span aria-hidden="true">TypeScript</span><span aria-hidden="true">Supabase</span><span aria-hidden="true">Postgres</span><span aria-hidden="true">Edge Functions</span><span aria-hidden="true">Vercel</span><span aria-hidden="true">OpenAI</span><span aria-hidden="true">Claude</span><span aria-hidden="true">Gemini</span><span aria-hidden="true">Perplexity</span><span aria-hidden="true">Apify</span><span aria-hidden="true">Firecrawl</span>
+          </div>
+        </div>
+        <div class="marquee marquee-rev" aria-label="More tools">
+          <div class="marquee-track">
+            <span>PostHog</span><span>Sentry</span><span>RevenueCat</span><span>App Store Connect</span><span>Make</span><span>Zendesk</span><span>Salesforce</span><span>Figma</span><span>PixiJS</span><span>React Flow</span><span>Unity</span><span>Python</span><span>Rust</span><span>Cursor</span><span>Claude Code</span>
+            <span aria-hidden="true">PostHog</span><span aria-hidden="true">Sentry</span><span aria-hidden="true">RevenueCat</span><span aria-hidden="true">App Store Connect</span><span aria-hidden="true">Make</span><span aria-hidden="true">Zendesk</span><span aria-hidden="true">Salesforce</span><span aria-hidden="true">Figma</span><span aria-hidden="true">PixiJS</span><span aria-hidden="true">React Flow</span><span aria-hidden="true">Unity</span><span aria-hidden="true">Python</span><span aria-hidden="true">Rust</span><span aria-hidden="true">Cursor</span><span aria-hidden="true">Claude Code</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 07 · Contact -->
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="shell contact-grid">
+          <div class="contact-copy" data-reveal>
+            <p class="kicker"><span>07</span>Contact</p>
+            <h2 id="contact-title">Ready to board <em>your team.</em></h2>
+            <p class="section-lead">Open to full-time roles at SaaS companies and startups — AI &amp; technical support, product operations, implementation and AI automation. Based in Athens; remote, hybrid, or relocating within Europe.</p>
+            <div class="contact-actions">
+              <a class="btn btn-lime" href="mailto:dmitri.nour@gmail.com?subject=Let's%20talk%20about%20a%20role" data-magnetic>Email me <span aria-hidden="true">↗</span></a>
+              <button class="btn btn-ghost" type="button" data-copy="dmitri.nour@gmail.com">Copy email</button>
+            </div>
+            <ul class="contact-links">
+              <li><a class="link-arrow" href="https://www.linkedin.com/in/dmytro-nour-6ab7611bb/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></li>
+              <li><a class="link-arrow" href="assets/Dmytro_Nour_Resume.pdf" type="application/pdf" download="Dmytro_Nour_Resume.pdf">Résumé (PDF) <span aria-hidden="true">↓</span></a></li>
+            </ul>
+          </div>
+
+          <div class="pass-wrap" data-reveal style="--d: 120ms">
+            <div class="pass" data-tilt>
+              <div class="pass-main">
+                <div class="pass-top"><span class="pass-brand">dn<i>.</i> air</span><span>Boarding pass</span></div>
+                <div class="pass-route">
+                  <div><span class="pass-code">ATH</span><span class="pass-city">Athens</span></div>
+                  <div class="pass-path" aria-hidden="true"><span></span><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" /></svg><span></span></div>
+                  <div class="pass-to"><span class="pass-code">YOU</span><span class="pass-city">Your team</span></div>
+                </div>
+                <dl class="pass-fields">
+                  <div><dt>Passenger</dt><dd>Nour / Dmytro</dd></div>
+                  <div><dt>Flight</dt><dd>DN 2026</dd></div>
+                  <div><dt>Seat</dt><dd>Product · Ops · AI</dd></div>
+                  <div><dt>Gate</dt><dd>Remote / EU</dd></div>
+                  <div><dt>Boarding</dt><dd>Now</dd></div>
+                  <div><dt>Class</dt><dd>Builder</dd></div>
+                </dl>
+              </div>
+              <div class="pass-stub">
+                <span class="pass-stub-label">Priority</span>
+                <span class="pass-barcode" aria-hidden="true" data-barcode></span>
+                <span class="pass-stub-mail">dmitri.nour@gmail.com</span>
+              </div>
+            </div>
+            <p class="pass-note"><span class="pulse" aria-hidden="true"></span>Usually replies within a day.</p>
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="shell footer-inner"><span class="footer-brand">dn<span>.</span></span><span>© <span id="year">2026</span> Dmytro Nour</span><a href="#top">Back to top ↑</a></div>
+      <div class="shell">
+        <div class="colophon" data-reveal>
+          <h2>This site is woven <em>from threads, too.</em></h2>
+          <ul>
+            <li><span>String-art portrait</span>after Petros Vrellis, “A New Way to Knit” (2016)</li>
+            <li><span>Cursor spotlight</span>Brittany Chiang's portfolio</li>
+            <li><span>Honest, text-first intro</span>Elliott Mangham, Awwwards Site of the Day</li>
+            <li><span>Magnetic buttons &amp; local time</span>Dennis Snellenberg's portfolio</li>
+            <li><span>Scroll-lit manifesto</span>Apple product pages</li>
+            <li><span>Serif × grotesk contrast</span>my CreatorZen redesign</li>
+            <li><span>Receipt table</span>my CreatorZen competitive analysis</li>
+            <li><span>Boarding pass</span>two and a half years at Wizz Air</li>
+          </ul>
+          <p class="colophon-note">Hand-coded in HTML, CSS and vanilla JavaScript. No templates, no frameworks.</p>
+        </div>
+        <div class="footer-bar">
+          <span class="brand-mark" aria-hidden="true">dn<i>.</i></span>
+          <span>© <span data-year>2026</span> Dmytro Nour</span>
+          <span>Athens · <span data-clock>--:--</span></span>
+          <a href="#top">Back to top ↑</a>
+        </div>
+      </div>
     </footer>
+
+    <div class="toast" role="status" aria-live="polite" data-toast></div>
   </body>
 </html>
