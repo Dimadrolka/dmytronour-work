@@ -383,6 +383,20 @@ html:not(.js) .hoop-photo { clip-path: none; }
 .is-visible .bl-bar em { opacity: 1; }
 .bl-rows li:nth-child(3) .bl-bar em { left: calc(var(--e) / var(--months) * 100% + 10px); color: var(--lime); }
 
+/* ---------- Local websites (teaser for /websites) ---------- */
+.local { padding: 0 0 clamp(90px, 10vw, 140px); }
+.local-card { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: clamp(28px, 5vw, 80px); padding: clamp(28px, 4vw, 56px); border: 1px solid var(--line-2); border-radius: 30px; background: radial-gradient(ellipse 60% 90% at 100% 0%, rgba(214, 242, 107, .08), transparent 70%), var(--surface); color: var(--text); text-decoration: none; transition: border-color .3s ease, background-color .3s ease; }
+.local-card:hover { border-color: rgba(214, 242, 107, .45); }
+.local-copy h2 { margin-top: 20px; font-size: clamp(32px, 3.6vw, 54px); line-height: 1.02; letter-spacing: -.045em; font-weight: 500; text-wrap: balance; }
+.local-copy > p:last-child { max-width: 640px; margin-top: 18px; color: var(--muted); font-size: 16.5px; line-height: 1.62; text-wrap: pretty; }
+.local-price { display: grid; justify-items: end; gap: 6px; text-align: right; }
+.local-price s { color: var(--faint); font-size: 20px; text-decoration-color: var(--coral); text-decoration-thickness: 2px; }
+.local-price strong { display: flex; align-items: baseline; gap: 8px; font-size: clamp(56px, 6vw, 92px); line-height: .95; letter-spacing: -.055em; font-weight: 500; }
+.local-price small { color: var(--muted); font-size: 15px; letter-spacing: 0; }
+.local-go { display: inline-flex; align-items: center; gap: 10px; margin-top: 14px; padding: 13px 20px; border-radius: 999px; background: var(--lime); color: #11150a; font-size: 15px; font-weight: 600; white-space: nowrap; }
+.local-go span { transition: transform .35s var(--ease); }
+.local-card:hover .local-go span { transform: translate(2px, -2px); }
+
 /* ---------- Paper sections ---------- */
 .paper { position: relative; z-index: 2; border-radius: clamp(24px, 3.4vw, 48px); background: var(--paper); color: var(--ink); }
 .paper ::selection { background: var(--ink); color: var(--paper); }
@@ -550,6 +564,8 @@ html:not(.js) .hoop-photo { clip-path: none; }
   .receipt-foot { grid-template-columns: 1fr; }
   .receipt-row.receipt-mine { margin-inline: -12px; padding-inline: 12px; }
   .colophon ul { grid-template-columns: 1fr; }
+  .local-card { grid-template-columns: 1fr; }
+  .local-price { justify-items: start; text-align: left; }
 }
 
 @media (max-width: 720px) {

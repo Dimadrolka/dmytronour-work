@@ -1,0 +1,205 @@
+/* ==========================================================================
+   /websites — sites for local businesses, founding-client prices.
+   Builds on styles.css (tokens, header, buttons, paper, reveal). The page is
+   Greek-first, and Geist / Instrument Serif have no Greek glyphs, so the type
+   stack swaps to close cousins that do.
+   ========================================================================== */
+
+:root {
+  --font-sans: "Inter Tight", "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Noto Serif Display", "Instrument Serif", Georgia, serif;
+  --font-mono: "JetBrains Mono", "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+/* Every line exists in both languages; only the active one is shown. */
+html[lang="el"] body [lang="en"],
+html[lang="en"] body [lang="el"] { display: none !important; }
+.ws [hidden] { display: none !important; }
+
+/* Language spans sit inside components that style every span. */
+.ws .kicker span[lang] { color: inherit; }
+.ws .btn span[lang], .ws .link-arrow span[lang] { font-weight: inherit; transform: none; transition: none; }
+
+/* ---------- Header ---------- */
+.ws-actions { display: flex; align-items: center; gap: 12px; }
+.ws-lang { display: inline-flex; padding: 3px; border: 1px solid var(--line-2); border-radius: 999px; }
+.ws-lang button { min-width: 42px; min-height: 34px; padding: 0 10px; border: 0; border-radius: 999px; background: transparent; color: var(--muted); font: 500 12px/1 var(--font-mono); letter-spacing: .08em; cursor: pointer; transition: background .25s ease, color .25s ease; }
+.ws-lang button:hover { color: var(--text); }
+.ws-lang button[aria-pressed="true"] { background: var(--text); color: var(--ink); }
+
+/* ---------- Hero ---------- */
+.ws-hero { position: relative; isolation: isolate; padding: calc(var(--header-h) + clamp(36px, 7vh, 88px)) 0 clamp(72px, 9vw, 130px); overflow: hidden; }
+.ws-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse 45% 55% at 78% 40%, rgba(214, 242, 107, .08), transparent 70%), radial-gradient(ellipse 40% 50% at 8% 95%, rgba(167, 139, 250, .08), transparent 70%); }
+.ws-hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); align-items: center; gap: clamp(40px, 6vw, 96px); }
+.ws-title { margin-top: 28px; font-size: clamp(44px, 6vw, 94px); line-height: 1; letter-spacing: -.045em; font-weight: 600; text-wrap: balance; animation: fade-up 1s var(--ease) .1s both; }
+.ws-title em { display: inline; padding-right: .06em; font-family: var(--font-serif); font-style: italic; font-weight: 400; letter-spacing: -.02em; background: linear-gradient(100deg, var(--lime) 10%, #f2f6d2 60%, var(--lime) 95%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.ws-lead { max-width: 600px; margin-top: 30px; color: var(--muted); font-size: clamp(17px, 1.35vw, 19.5px); line-height: 1.62; text-wrap: pretty; animation: fade-up 1s var(--ease) .25s both; }
+.ws-lead strong { color: var(--text); font-weight: 500; }
+.ws-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; animation: fade-up 1s var(--ease) .35s both; }
+
+/* Founding spots: bright = open, grey = taken. */
+.ws-seats { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; width: fit-content; max-width: 100%; margin-top: 30px; padding: 14px 18px; border: 1px solid var(--line-2); border-radius: 18px; background: rgba(237, 234, 224, .02); }
+.ws-hero .ws-seats { animation: fade-up 1s var(--ease) .45s both; }
+.ws-seats-label { color: var(--muted); font: 500 11px/1.4 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; }
+.ws-seats-dots { display: inline-flex; gap: 7px; }
+.ws-seats-dots i { width: 13px; height: 13px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 12px rgba(214, 242, 107, .45); }
+.ws-seats-dots i.is-taken { background: transparent; border: 1.5px solid var(--faint); box-shadow: none; }
+.ws-seats-count { color: var(--text); font-size: 14.5px; }
+.ws-seats-count b { font-weight: 600; }
+
+/* The price tag, hanging on a thread. */
+.ws-tag-wrap { justify-self: center; width: min(100%, 360px); margin: 0; padding-top: 110px; animation: fade-up 1.2s var(--ease) .2s both; }
+.ws-tag-swing { position: relative; transform-origin: 50% -110px; filter: drop-shadow(0 34px 50px rgba(0, 0, 0, .5)); animation: ws-sway 7s ease-in-out infinite; }
+.ws-tag-swing::before { content: ""; position: absolute; left: 50%; top: -110px; z-index: 1; width: 1.5px; height: 142px; margin-left: -.75px; background: linear-gradient(transparent, var(--lime) 45%); box-shadow: 0 0 10px rgba(214, 242, 107, .45); }
+@keyframes ws-sway { 0%, 100% { transform: rotate(-2.2deg); } 50% { transform: rotate(2.2deg); } }
+.ws-tag { position: relative; display: grid; justify-items: center; gap: 12px; padding: 66px 30px 30px; border-radius: 20px; background: var(--paper); color: var(--ink); text-align: center; clip-path: polygon(50% 0, 100% 13%, 100% 100%, 0 100%, 0 13%); }
+.ws-tag-hole { position: absolute; top: 24px; left: 50%; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%; background: var(--bg); box-shadow: 0 0 0 4px #d8d0bd, inset 0 2px 4px rgba(0, 0, 0, .5); }
+.ws-tag-kicker { color: var(--lime-deep); font: 500 11px/1.4 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; }
+.ws-tag-was { color: var(--ink-muted); font-size: 22px; font-weight: 500; letter-spacing: -.02em; text-decoration-color: var(--coral); text-decoration-thickness: 2px; }
+.ws-tag-now { display: flex; align-items: baseline; gap: 6px; font-size: clamp(84px, 9vw, 118px); font-weight: 600; line-height: .9; letter-spacing: -.06em; }
+.ws-tag-now small { align-self: center; color: var(--ink-muted); font-size: 17px; font-weight: 500; letter-spacing: 0; }
+.ws-tag-now i { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: .5em; letter-spacing: 0; }
+.ws-tag-foot { width: 100%; padding-top: 16px; border-top: 1px dashed rgba(20, 22, 20, .25); color: var(--ink); font-size: 15px; font-weight: 500; line-height: 1.4; }
+
+/* ---------- 01 · The deal ---------- */
+.ws-deal { padding: clamp(90px, 11vw, 160px) 0 clamp(100px, 12vw, 170px); border-top: 1px solid var(--line); }
+.ws-deal-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 3vw, 44px); }
+.ws-deal-card { padding-top: 26px; border-top: 1px solid var(--line-2); }
+.ws-deal-ask { border-top-color: var(--lime); }
+.ws-deal-num { color: var(--lime); font: 500 12px/1 var(--font-mono); letter-spacing: .1em; }
+.ws-deal-card h3 { margin-top: 20px; font-size: clamp(22px, 2vw, 28px); line-height: 1.15; letter-spacing: -.035em; font-weight: 600; }
+.ws-deal-card p { margin-top: 12px; color: var(--muted); font-size: 16px; line-height: 1.62; text-wrap: pretty; }
+
+/* ---------- 02 · Prices ---------- */
+.ws-prices { padding: clamp(100px, 12vw, 170px) 0; }
+.ws-plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: clamp(14px, 1.6vw, 22px); }
+.ws-plan { position: relative; display: flex; flex-direction: column; gap: 24px; padding: clamp(26px, 2.8vw, 38px); border: 1px solid var(--ink-line); border-radius: 30px; background: var(--paper-2); }
+.ws-plan-head h3 { font-size: clamp(28px, 2.6vw, 38px); line-height: 1.05; letter-spacing: -.045em; font-weight: 600; }
+.ws-plan-head p { margin-top: 10px; color: var(--ink-muted); font-size: 16px; line-height: 1.5; text-wrap: pretty; }
+.ws-plan-badge { position: absolute; top: clamp(22px, 2.4vw, 32px); right: clamp(22px, 2.4vw, 32px); padding: 7px 11px; border-radius: 999px; background: var(--ink); color: var(--paper); font: 500 10.5px/1 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; }
+.ws-plan-badge + .ws-plan-head h3 { padding-right: 120px; }
+.ws-price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding: 22px 0; border-top: 1px solid var(--ink-line); border-bottom: 1px solid var(--ink-line); }
+.ws-price s { color: var(--ink-muted); font-size: 22px; font-weight: 500; letter-spacing: -.02em; text-decoration-color: var(--coral); text-decoration-thickness: 2px; }
+.ws-price strong { font-size: clamp(56px, 5vw, 76px); line-height: .95; letter-spacing: -.055em; font-weight: 600; font-variant-numeric: tabular-nums; }
+.ws-price-unit { color: var(--ink-muted); font: 500 11px/1.4 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; }
+.ws-price-note { flex-basis: 100%; margin-top: 6px; color: var(--lime-deep); font-size: 15px; font-weight: 600; }
+.ws-feats { display: grid; }
+.ws-feats li { position: relative; padding: 11px 0 11px 28px; border-bottom: 1px solid var(--ink-line); font-size: 15.5px; line-height: 1.5; }
+.ws-feats li:last-child { border-bottom: 0; }
+.ws-feats li::before { content: ""; position: absolute; left: 0; top: 17px; width: 13px; height: 7px; border-left: 2px solid var(--lime-deep); border-bottom: 2px solid var(--lime-deep); transform: rotate(-45deg); }
+.ws-plan .btn { width: 100%; margin-top: auto; }
+.ws-plan-foot { margin-top: auto; padding-top: 4px; color: var(--ink-muted); font: 500 12px/1.5 var(--font-mono); letter-spacing: .04em; }
+
+/* The recommended plan goes dark; the add-on stays light and dashed. */
+.ws-plan-pick { border-color: var(--ink); background: var(--ink); color: var(--paper); box-shadow: 0 40px 80px rgba(20, 22, 20, .22); }
+.ws-plan-pick ::selection { background: var(--lime); color: var(--ink); }
+.ws-plan-pick .ws-plan-badge { background: var(--lime); color: #11150a; }
+.ws-plan-pick .ws-plan-head p, .ws-plan-pick .ws-price-unit { color: var(--muted); }
+.ws-plan-pick .ws-price, .ws-plan-pick .ws-feats li { border-color: var(--line-2); }
+.ws-plan-pick .ws-price s { color: var(--muted); }
+.ws-plan-pick .ws-feats li::before { border-color: var(--lime); }
+.ws-plan-pick :focus-visible { outline-color: var(--lime); }
+.ws-plan-care { border-style: dashed; border-color: rgba(20, 22, 20, .28); background: transparent; }
+.ws-plan-care .ws-plan-badge { border: 1px solid var(--ink-line); background: transparent; color: var(--ink-muted); }
+
+.ws-included { margin-top: clamp(44px, 5vw, 70px); }
+.ws-included ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(24px, 3vw, 44px); border-top: 1px solid var(--ink-line); }
+.ws-included li { position: relative; padding: 16px 0 16px 28px; border-bottom: 1px solid var(--ink-line); font-size: 15.5px; line-height: 1.5; }
+.ws-included li::before { content: ""; position: absolute; left: 0; top: 22px; width: 13px; height: 7px; border-left: 2px solid var(--lime-deep); border-bottom: 2px solid var(--lime-deep); transform: rotate(-45deg); }
+
+/* ---------- 03 · How it works ---------- */
+.ws-how { padding: clamp(100px, 12vw, 170px) 0 clamp(50px, 6vw, 90px); }
+.ws-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(22px, 3vw, 44px); }
+.ws-steps li { position: relative; padding-top: 30px; border-top: 1px solid var(--line-2); }
+.ws-steps li::before { content: ""; position: absolute; top: -1px; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, var(--lime), rgba(214, 242, 107, .1)); transform: scaleX(0); transform-origin: left; transition: transform 1.1s var(--ease) var(--d, 0ms); }
+.ws-steps.is-visible li::before { transform: scaleX(1); }
+.ws-step-num { display: block; color: var(--lime); font-family: var(--font-serif); font-style: italic; font-size: clamp(44px, 4vw, 58px); line-height: 1; }
+.ws-steps h3 { margin-top: 18px; font-size: clamp(21px, 1.8vw, 25px); line-height: 1.2; letter-spacing: -.035em; font-weight: 600; }
+.ws-steps p { margin-top: 10px; color: var(--muted); font-size: 15.5px; line-height: 1.62; text-wrap: pretty; }
+
+/* ---------- 04 · Quality ---------- */
+.ws-method { padding: clamp(70px, 9vw, 130px) 0 clamp(100px, 12vw, 170px); }
+.ws-weave { max-width: 860px; margin: 0 0 clamp(56px, 7vw, 96px); }
+.ws-weave-src { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); text-align: center; }
+.ws-weave-src li { display: grid; justify-items: center; gap: 6px; }
+.ws-weave-src b { color: var(--c); font-size: clamp(22px, 3vw, 36px); font-weight: 600; line-height: 1; letter-spacing: -.03em; }
+.ws-weave-src span { color: var(--faint); font: 500 10.5px/1.3 var(--font-mono); letter-spacing: .06em; text-transform: uppercase; }
+.ws-weave-svg { width: 100%; height: auto; margin-top: 14px; overflow: visible; }
+.ws-weave-svg path { fill: none; stroke: var(--c); stroke-width: 1.8; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s var(--ease) calc(var(--d) + 250ms); }
+.ws-weave.is-visible .ws-weave-svg path { stroke-dashoffset: 0; }
+html:not(.js) .ws-weave-svg path { stroke-dashoffset: 0; }
+.ws-weave-out { width: fit-content; margin: 8px auto 0; padding: 12px 20px; border-radius: 999px; background: var(--lime); color: #11150a; font-size: 15px; font-weight: 600; box-shadow: 0 0 40px rgba(214, 242, 107, .25); }
+.ws-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.ws-stats div { display: grid; align-content: start; gap: 12px; padding: 28px 24px 28px 0; }
+.ws-stats div + div { padding-left: 24px; border-left: 1px solid var(--line); }
+.ws-stats strong { font-size: clamp(40px, 4.2vw, 64px); line-height: 1; letter-spacing: -.05em; font-weight: 600; }
+.ws-stats strong small { font-size: .5em; color: var(--lime); letter-spacing: 0; }
+.ws-stats div > span { color: var(--muted); font-size: 15px; line-height: 1.5; }
+.ws-portfolio-link { margin-top: 34px; }
+
+/* ---------- 05 · Questions ---------- */
+.ws-faq { padding: clamp(100px, 12vw, 170px) 0; }
+.ws-faq-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); align-items: start; gap: clamp(40px, 6vw, 100px); }
+.ws-faq .section-head { position: sticky; top: calc(var(--header-h) + 32px); margin-bottom: 0; }
+.ws-faq .section-head h2 { font-size: clamp(40px, 4.6vw, 72px); }
+.ws-questions { border-top: 1px solid var(--ink-line); }
+.ws-q { border-bottom: 1px solid var(--ink-line); }
+.ws-q summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 24px 0; font-size: clamp(19px, 1.7vw, 23px); font-weight: 600; line-height: 1.3; letter-spacing: -.025em; list-style: none; cursor: pointer; }
+.ws-q summary::-webkit-details-marker { display: none; }
+.ws-q summary::after { content: ""; flex: 0 0 auto; width: 34px; height: 34px; border: 1px solid var(--ink-line); border-radius: 50%; background: linear-gradient(var(--ink), var(--ink)) center / 12px 1.5px no-repeat, linear-gradient(var(--ink), var(--ink)) center / 1.5px 12px no-repeat; transition: transform .35s var(--ease), background-color .25s ease; }
+.ws-q summary:hover::after { background-color: var(--paper-2); }
+.ws-q[open] summary::after { transform: rotate(45deg); }
+.ws-q p { max-width: 62ch; padding: 0 0 26px; color: var(--ink-muted); font-size: 16.5px; line-height: 1.65; text-wrap: pretty; }
+
+/* ---------- 06 · Contact ---------- */
+.ws-cta .contact-copy { max-width: 900px; }
+.ws-cta .ws-seats { margin-top: 40px; }
+.ws-footer { padding: 0 0 30px; border-top: 0; }
+.ws-footer .footer-bar { margin-top: 0; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1180px) {
+  .ws-plans { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ws-plan-care { grid-column: 1 / -1; }
+  .ws-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 44px; }
+}
+
+@media (max-width: 980px) {
+  .ws-hero-grid { grid-template-columns: 1fr; gap: 20px; }
+  .ws-tag-wrap { width: min(100%, 320px); padding-top: 90px; }
+  .ws-tag-swing { transform-origin: 50% -90px; }
+  .ws-tag-swing::before { top: -90px; height: 122px; }
+  .ws-deal-grid { grid-template-columns: 1fr; }
+  .ws-plans { grid-template-columns: 1fr; }
+  .ws-plan-care { grid-column: auto; }
+  .ws-included ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ws-faq-grid { grid-template-columns: 1fr; }
+  .ws-faq .section-head { position: static; }
+}
+
+@media (max-width: 720px) {
+  .ws-actions { gap: 8px; }
+  .ws-actions .btn-sm { padding: 0 14px; }
+  .ws-title { font-size: clamp(40px, 11.5vw, 64px); }
+  .ws-hero-actions .btn { flex: 1 1 auto; }
+  .ws-seats { width: 100%; }
+  .ws-tag-wrap { width: min(100%, 268px); padding-top: 64px; }
+  .ws-tag-swing { transform-origin: 50% -64px; }
+  .ws-tag-swing::before { top: -64px; height: 96px; }
+  .ws-tag { gap: 10px; padding: 58px 22px 24px; }
+  .ws-tag-now { font-size: 74px; }
+  .ws-tag-foot { font-size: 14px; }
+  .ws-plan { border-radius: 24px; }
+  .ws-included ul { grid-template-columns: 1fr; }
+  .ws-steps { grid-template-columns: 1fr; row-gap: 36px; }
+  .ws-weave-src span { font-size: 9px; letter-spacing: .02em; }
+  .ws-stats { grid-template-columns: 1fr; }
+  .ws-stats div, .ws-stats div + div { padding: 22px 0; border-left: 0; }
+  .ws-stats div + div { border-top: 1px solid var(--line); }
+  .ws-cta .contact-actions .btn { flex: 1 1 auto; }
+}
+
+@media (max-width: 400px) {
+  .ws-lang button { min-width: 36px; padding: 0 8px; }
+  .ws-plan-badge + .ws-plan-head h3 { padding-right: 0; padding-top: 34px; }
+}
