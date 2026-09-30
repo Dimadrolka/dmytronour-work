@@ -15,6 +15,7 @@
         general: "Ιστοσελίδα για την επιχείρησή μου",
         basic: "Ιστοσελίδα: πακέτο Βασικό (149 €)",
         booking: "Ιστοσελίδα: πακέτο Με ραντεβού (249 €)",
+        stay: "Ιστοσελίδα για κατάλυμα (390–990 €)",
       },
     },
     en: {
@@ -25,6 +26,7 @@
         general: "A website for my business",
         basic: "Website: Starter package (149 €)",
         booking: "Website: With bookings package (249 €)",
+        stay: "Website for rentals & hotels (390–990 €)",
       },
     },
   };

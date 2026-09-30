@@ -101,6 +101,12 @@ html[lang="en"] body [lang="el"] { display: none !important; }
 .ws-plan-pick :focus-visible { outline-color: var(--lime); }
 .ws-plan-care { border-style: dashed; border-color: rgba(20, 22, 20, .28); background: transparent; }
 .ws-plan-care .ws-plan-badge { border: 1px solid var(--ink-line); background: transparent; color: var(--ink-muted); }
+.ws-plan-stay .ws-price strong { font-size: clamp(44px, 3.8vw, 60px); }
+/* Care is an add-on to all three packages: a full-width band under them */
+.ws-plan-care { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); column-gap: clamp(24px, 4vw, 64px); align-items: start; }
+.ws-plan-care > .ws-plan-head, .ws-plan-care > .ws-price { grid-column: 1; }
+.ws-plan-care > .ws-feats { grid-column: 2; grid-row: 1 / span 2; }
+.ws-plan-care > .ws-plan-foot { grid-column: 2; }
 
 .ws-included { margin-top: clamp(44px, 5vw, 70px); }
 .ws-included ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(24px, 3vw, 44px); border-top: 1px solid var(--ink-line); }
@@ -160,7 +166,7 @@ html:not(.js) .ws-weave-svg path { stroke-dashoffset: 0; }
 /* ---------- Responsive ---------- */
 @media (max-width: 1180px) {
   .ws-plans { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .ws-plan-care { grid-column: 1 / -1; }
+  .ws-plan-care, .ws-plan-stay { grid-column: 1 / -1; }
   .ws-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 44px; }
 }
 
@@ -171,7 +177,8 @@ html:not(.js) .ws-weave-svg path { stroke-dashoffset: 0; }
   .ws-tag-swing::before { top: -90px; height: 122px; }
   .ws-deal-grid { grid-template-columns: 1fr; }
   .ws-plans { grid-template-columns: 1fr; }
-  .ws-plan-care { grid-column: auto; }
+  .ws-plan-care, .ws-plan-stay { grid-column: auto; }
+  .ws-plan-care { display: flex; }
   .ws-included ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ws-faq-grid { grid-template-columns: 1fr; }
   .ws-faq .section-head { position: static; }
