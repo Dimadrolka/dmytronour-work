@@ -1,3 +1,11 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "redirects": [
+    { "source": "/examples", "destination": "/websites#examples", "permanent": false },
+    { "source": "/examples/:slug(villa-theano|villa-ifigenia|armyriki|poulia|aperathitissa|mina-lazari-studio|o-manthos|paws-bath-and-bandana|nondas-barber-shop)", "destination": "/examples/:slug/", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/examples/:slug(villa-theano|villa-ifigenia|armyriki)/:path(.*)", "destination": "https://dn-examples-stays.vercel.app/:slug/:path" },
+    { "source": "/examples/:slug(poulia|aperathitissa|mina-lazari-studio|o-manthos|paws-bath-and-bandana|nondas-barber-shop)/:path(.*)", "destination": "https://dn-examples-local.vercel.app/:slug/:path" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }

@@ -70,7 +70,21 @@ html[lang="en"] body [lang="el"] { display: none !important; }
 .ws-deal-card h3 { margin-top: 20px; font-size: clamp(22px, 2vw, 28px); line-height: 1.15; letter-spacing: -.035em; font-weight: 600; }
 .ws-deal-card p { margin-top: 12px; color: var(--muted); font-size: 16px; line-height: 1.62; text-wrap: pretty; }
 
-/* ---------- 02 · Prices ---------- */
+/* ---------- 02 · Examples ---------- */
+.ws-examples { padding: 0 0 clamp(100px, 12vw, 170px); }
+.ws-ex-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(40px, 4.4vw, 64px) clamp(18px, 2.2vw, 30px); }
+.ws-ex { display: grid; align-content: start; gap: 8px; text-decoration: none; }
+.ws-ex-shot { display: block; margin-bottom: 12px; overflow: hidden; border: 1px solid var(--line-2); border-radius: 18px; background: var(--surface); aspect-ratio: 16 / 10; transition: border-color .3s ease; }
+.ws-ex-shot img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.ws-ex:hover .ws-ex-shot, .ws-ex:focus-visible .ws-ex-shot { border-color: var(--lime); }
+.ws-ex:hover .ws-ex-shot img { transform: scale(1.03); }
+.ws-ex-kind { color: var(--lime); font: 500 11px/1.4 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; }
+.ws-ex-name { font-size: clamp(21px, 1.8vw, 25px); font-weight: 600; line-height: 1.2; letter-spacing: -.03em; }
+.ws-ex-name > span { display: inline-block; color: var(--faint); font-weight: 400; transition: transform .35s var(--ease), color .2s ease; }
+.ws-ex:hover .ws-ex-name > span { color: var(--lime); transform: translate(2px, -2px); }
+.ws-ex-idea { color: var(--muted); font-size: 15.5px; line-height: 1.55; text-wrap: pretty; }
+
+/* ---------- 03 · Prices ---------- */
 .ws-prices { padding: clamp(100px, 12vw, 170px) 0; }
 .ws-plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: clamp(14px, 1.6vw, 22px); }
 .ws-plan { position: relative; display: flex; flex-direction: column; gap: 24px; padding: clamp(26px, 2.8vw, 38px); border: 1px solid var(--ink-line); border-radius: 30px; background: var(--paper-2); }
@@ -113,7 +127,7 @@ html[lang="en"] body [lang="el"] { display: none !important; }
 .ws-included li { position: relative; padding: 16px 0 16px 28px; border-bottom: 1px solid var(--ink-line); font-size: 15.5px; line-height: 1.5; }
 .ws-included li::before { content: ""; position: absolute; left: 0; top: 22px; width: 13px; height: 7px; border-left: 2px solid var(--lime-deep); border-bottom: 2px solid var(--lime-deep); transform: rotate(-45deg); }
 
-/* ---------- 03 · How it works ---------- */
+/* ---------- 04 · How it works ---------- */
 .ws-how { padding: clamp(100px, 12vw, 170px) 0 clamp(50px, 6vw, 90px); }
 .ws-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(22px, 3vw, 44px); }
 .ws-steps li { position: relative; padding-top: 30px; border-top: 1px solid var(--line-2); }
@@ -123,7 +137,7 @@ html[lang="en"] body [lang="el"] { display: none !important; }
 .ws-steps h3 { margin-top: 18px; font-size: clamp(21px, 1.8vw, 25px); line-height: 1.2; letter-spacing: -.035em; font-weight: 600; }
 .ws-steps p { margin-top: 10px; color: var(--muted); font-size: 15.5px; line-height: 1.62; text-wrap: pretty; }
 
-/* ---------- 04 · Quality ---------- */
+/* ---------- 05 · Quality ---------- */
 .ws-method { padding: clamp(70px, 9vw, 130px) 0 clamp(100px, 12vw, 170px); }
 .ws-weave { max-width: 860px; margin: 0 0 clamp(56px, 7vw, 96px); }
 .ws-weave-src { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); text-align: center; }
@@ -143,7 +157,7 @@ html:not(.js) .ws-weave-svg path { stroke-dashoffset: 0; }
 .ws-stats div > span { color: var(--muted); font-size: 15px; line-height: 1.5; }
 .ws-portfolio-link { margin-top: 34px; }
 
-/* ---------- 05 · Questions ---------- */
+/* ---------- 06 · Questions ---------- */
 .ws-faq { padding: clamp(100px, 12vw, 170px) 0; }
 .ws-faq-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); align-items: start; gap: clamp(40px, 6vw, 100px); }
 .ws-faq .section-head { position: sticky; top: calc(var(--header-h) + 32px); margin-bottom: 0; }
@@ -157,7 +171,7 @@ html:not(.js) .ws-weave-svg path { stroke-dashoffset: 0; }
 .ws-q[open] summary::after { transform: rotate(45deg); }
 .ws-q p { max-width: 62ch; padding: 0 0 26px; color: var(--ink-muted); font-size: 16.5px; line-height: 1.65; text-wrap: pretty; }
 
-/* ---------- 06 · Contact ---------- */
+/* ---------- 07 · Contact ---------- */
 .ws-cta .contact-copy { max-width: 900px; }
 .ws-cta .ws-seats { margin-top: 40px; }
 .ws-footer { padding: 0 0 30px; border-top: 0; }
@@ -165,6 +179,7 @@ html:not(.js) .ws-weave-svg path { stroke-dashoffset: 0; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1180px) {
+  .ws-ex-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ws-plans { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ws-plan-care, .ws-plan-stay { grid-column: 1 / -1; }
   .ws-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 44px; }
@@ -196,6 +211,9 @@ html:not(.js) .ws-weave-svg path { stroke-dashoffset: 0; }
   .ws-tag { gap: 10px; padding: 58px 22px 24px; }
   .ws-tag-now { font-size: 74px; }
   .ws-tag-foot { font-size: 14px; }
+  .ws-ex-grid { display: flex; gap: 14px; margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter); overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 var(--gutter); scrollbar-width: none; }
+  .ws-ex-grid::-webkit-scrollbar { display: none; }
+  .ws-ex-grid > li { flex: 0 0 84%; scroll-snap-align: start; }
   .ws-plan { border-radius: 24px; }
   .ws-included ul { grid-template-columns: 1fr; }
   .ws-steps { grid-template-columns: 1fr; row-gap: 36px; }
