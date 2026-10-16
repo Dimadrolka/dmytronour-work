@@ -16,6 +16,7 @@
         basic: "Ιστοσελίδα: πακέτο Βασικό (149 €)",
         booking: "Ιστοσελίδα: πακέτο Με ραντεβού (249 €)",
         stay: "Ιστοσελίδα για κατάλυμα (390–990 €)",
+        fix: "Διόρθωση ιστοσελίδας (80–150 €)",
       },
     },
     en: {
@@ -27,6 +28,7 @@
         basic: "Website: Starter package (149 €)",
         booking: "Website: With bookings package (249 €)",
         stay: "Website for rentals & hotels (390–990 €)",
+        fix: "Website fix (80–150 €)",
       },
     },
   };
