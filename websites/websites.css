@@ -1,24 +1,11 @@
 /* ==========================================================================
-   /websites — sites for local businesses, founding-client prices.
+   /websites — fixed-price sites for small businesses.
    Builds on styles.css (tokens, header, buttons, paper, reveal). The page is
-   Greek-first, and Geist / Instrument Serif have no Greek glyphs, so the type
-   stack swaps to close cousins that do.
+   English, on the site's own type.
    ========================================================================== */
 
-:root {
-  --font-sans: "Inter Tight", "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-serif: "Noto Serif Display", "Instrument Serif", Georgia, serif;
-  --font-mono: "JetBrains Mono", "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
-}
-
-/* Every line exists in both languages; only the active one is shown. */
-html[lang="el"] body [lang="en"],
-html[lang="en"] body [lang="el"] { display: none !important; }
 .ws [hidden] { display: none !important; }
 
-/* Language spans sit inside components that style every span. */
-.ws .kicker span[lang] { color: inherit; }
-.ws .btn span[lang], .ws .link-arrow span[lang] { font-weight: inherit; transform: none; transition: none; }
 
 /* ---------- Header ---------- */
 .ws-actions { display: flex; align-items: center; gap: 12px; }
@@ -122,6 +109,7 @@ html[lang="en"] body [lang="el"] { display: none !important; }
 .ws-plan-care > .ws-feats { grid-column: 2; grid-row: 1 / span 2; }
 .ws-plan-fix > .ws-feats { grid-column: 2; grid-row: 1 / span 3; }
 .ws-plan-fix > .btn { justify-self: start; }
+.ws-plan-pick .ws-plan-foot { color: var(--muted); }
 .ws-plan-care > .ws-plan-foot { grid-column: 2; }
 
 .ws-included { margin-top: clamp(44px, 5vw, 70px); }

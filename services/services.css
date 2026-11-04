@@ -1,0 +1,185 @@
+/* ==========================================================================
+   /services, /automations, /apps, /videos, /pay: the business offer.
+   Builds on styles.css (tokens, header, buttons, paper). Same world as the
+   rest of the site; pages lead with real work and with the client's problem.
+   ========================================================================== */
+
+.sv .site-header .btn { flex: none; }
+.sv-h1 { max-width: 18ch; font-size: clamp(42px, 6vw, 92px); line-height: .98; letter-spacing: -.04em; font-weight: 500; text-wrap: balance; animation: fade-up 1s var(--ease) .05s both; }
+.sv-h1 em, .sv-h2 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; letter-spacing: -.015em; }
+.sv-h1 em { display: block; color: var(--lime); }
+.sv-h2 { max-width: 17ch; font-size: clamp(36px, 5vw, 76px); line-height: 1; letter-spacing: -.04em; font-weight: 500; text-wrap: balance; }
+.sv-h2 em { color: #d9dccd; }
+.paper .sv-h2 em { color: var(--ink); }
+.sv-lead { max-width: 52ch; margin-top: 24px; color: var(--muted); font-size: clamp(17px, 1.35vw, 20px); line-height: 1.55; text-wrap: pretty; }
+.paper .sv-lead { color: var(--ink-muted); }
+.sv-section { padding: clamp(80px, 10vw, 150px) 0; }
+.sv-section.paper { padding-inline: 0; }
+.sv-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; margin-top: 32px; }
+
+/* ---------- Hero ---------- */
+.sv-hero { padding: calc(var(--header-h) + clamp(36px, 7vh, 84px)) 0 clamp(64px, 8vw, 110px); }
+.sv-hero-copy { animation: fade-up 1s var(--ease) .15s both; }
+.sv-hero-split { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); align-items: center; gap: clamp(36px, 6vw, 96px); }
+
+/* The wall of real work: four kinds of output, four shapes. */
+.sv-wall { display: grid; grid-template-columns: 1.55fr 1.1fr .62fr 1.4fr; gap: clamp(10px, 1.2vw, 18px); align-items: stretch; margin-top: clamp(44px, 6vw, 76px); }
+.sv-tile { display: flex; flex-direction: column; min-width: 0; color: inherit; text-decoration: none; animation: wall-up 1.1s var(--ease) both; }
+.sv-tile:nth-child(2) { animation-delay: .08s; }
+.sv-tile:nth-child(3) { animation-delay: .16s; }
+.sv-tile:nth-child(4) { animation-delay: .24s; }
+@keyframes wall-up { from { opacity: 0; transform: translateY(24px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+.sv-tile-media { position: relative; flex: 1; height: clamp(240px, 27vw, 400px); overflow: hidden; border: 1px solid var(--line-2); border-radius: 14px; background: var(--surface); transition: border-color .25s ease, transform .6s var(--ease); }
+.sv-tile:hover .sv-tile-media, .sv-tile:focus-visible .sv-tile-media { border-color: var(--lime); transform: translateY(-4px); }
+.sv-tile-media img, .sv-tile-media video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.sv-tile-meta { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 10px; padding: 12px 2px 0; }
+.sv-tile-meta b { font-size: 16px; font-weight: 600; letter-spacing: -.01em; }
+.sv-tile:hover .sv-tile-meta b { color: var(--lime); }
+.sv-tile-meta span { color: var(--faint); font-size: 13px; }
+
+/* Run log: the steps of a real pipeline, written out like its log. */
+.sv-log { display: flex; flex-direction: column; justify-content: center; gap: 0; height: 100%; margin: 0; padding: clamp(16px, 1.6vw, 26px); background: var(--bg-2); font: 400 clamp(12px, .95vw, 14px)/1.45 var(--font-mono); font-variant-numeric: tabular-nums; }
+.sv-log li { display: grid; grid-template-columns: 6.5ch minmax(0, 1fr); gap: 1ch; padding: 9px 0; border-top: 1px solid var(--line); animation: log-in .7s var(--ease) both; animation-delay: calc(.5s + var(--i) * .28s); }
+.sv-log li:first-child { border-top: 0; }
+.sv-log b { color: var(--lime); font-weight: 500; }
+.sv-log span { color: var(--text); }
+@keyframes log-in { from { opacity: .15; } to { opacity: 1; } }
+.sv-log-big { border: 1px solid var(--line-2); border-radius: 14px; font-size: clamp(13px, 1.05vw, 16px); }
+
+/* ---------- Problem router ---------- */
+.sv-router { margin-top: clamp(40px, 5vw, 72px); border-top: 1px solid var(--ink-line); }
+.sv-route { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) 156px; align-items: center; gap: clamp(16px, 3vw, 56px); padding: clamp(24px, 2.8vw, 38px) 0; border-bottom: 1px solid var(--ink-line); color: inherit; text-decoration: none; }
+.sv-route-problem { transition: transform .5s var(--ease); }
+.sv-route:hover .sv-route-problem, .sv-route:focus-visible .sv-route-problem { transform: translateX(10px); }
+.sv-route-problem { font-size: clamp(21px, 2.2vw, 33px); line-height: 1.16; letter-spacing: -.025em; font-weight: 500; text-wrap: balance; }
+.sv-route-fix { display: grid; gap: 4px; font-size: 15px; line-height: 1.45; color: var(--ink-muted); }
+.sv-route-fix b { color: var(--ink); font-size: 17px; font-weight: 600; letter-spacing: -.01em; }
+.sv-route-price { display: inline-flex; align-items: center; justify-content: flex-end; gap: 12px; white-space: nowrap; font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.sv-route-price i { display: inline-grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--ink-line); border-radius: 50%; font-style: normal; transition: background .25s ease, color .25s ease; }
+.sv-route:hover .sv-route-price i, .sv-route:focus-visible .sv-route-price i { background: var(--ink); color: var(--paper); }
+.sv-route-note { max-width: 62ch; margin-top: 26px; color: var(--ink-muted); }
+.sv-route-note a { color: var(--ink); font-weight: 600; text-underline-offset: 3px; }
+
+/* Plain rows on the dark ground: situations, or what is included. */
+.sv-rows { margin-top: clamp(36px, 4vw, 60px); border-top: 1px solid var(--line-2); }
+.paper .sv-rows { border-color: var(--ink-line); }
+.sv-rows > li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(12px, 3vw, 56px); padding: clamp(20px, 2.2vw, 30px) 0; border-bottom: 1px solid var(--line-2); }
+.paper .sv-rows > li { border-color: var(--ink-line); }
+.sv-rows h3 { font-size: clamp(20px, 1.9vw, 27px); line-height: 1.2; letter-spacing: -.02em; font-weight: 500; text-wrap: balance; }
+.sv-rows p { max-width: 62ch; color: var(--muted); line-height: 1.58; text-wrap: pretty; }
+.paper .sv-rows p { color: var(--ink-muted); }
+
+/* ---------- Proof ---------- */
+.sv-about { display: grid; grid-template-columns: minmax(0, .62fr) minmax(0, 1.38fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+.sv-portrait { overflow: hidden; border-radius: 14px; border: 1px solid var(--line-2); }
+.sv-portrait img { width: 100%; height: auto; }
+.sv-about p { max-width: 58ch; margin-top: 22px; color: var(--muted); font-size: 17px; line-height: 1.6; text-wrap: pretty; }
+.sv-proof { margin-top: clamp(30px, 3vw, 44px); border-top: 1px solid var(--line-2); }
+.sv-proof li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 24px; align-items: baseline; padding: 15px 0; border-bottom: 1px solid var(--line-2); }
+.sv-proof a, .sv-proof b { color: var(--text); font-size: 17px; font-weight: 600; letter-spacing: -.01em; text-underline-offset: 4px; text-decoration-color: var(--line-2); }
+.sv-proof a:hover { color: var(--lime); }
+.sv-proof small { grid-column: 1; color: var(--muted); font-size: 15px; line-height: 1.45; }
+.sv-label { grid-column: 2; grid-row: 1; color: var(--lime); font-size: 13px; font-weight: 500; white-space: nowrap; }
+.sv-label.is-sample { color: var(--muted); }
+.sv-legend { margin-top: 18px; color: var(--faint); font-size: 14px; line-height: 1.55; }
+
+/* Case studies on /apps */
+.sv-apps-h2 { margin-top: clamp(72px, 9vw, 130px); }
+.sv-case { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 80px); align-items: center; padding: clamp(44px, 5vw, 76px) 0; border-top: 1px solid var(--line-2); }
+.sv-case:first-of-type { margin-top: clamp(36px, 4vw, 60px); }
+.sv-case h3 { font-size: clamp(28px, 3vw, 46px); line-height: 1.04; letter-spacing: -.03em; font-weight: 500; }
+.sv-case .sv-label { display: block; margin-bottom: 12px; }
+.sv-case p { max-width: 56ch; margin-top: 16px; color: var(--muted); line-height: 1.6; text-wrap: pretty; }
+.sv-case .link-arrow { margin-top: 22px; margin-right: 20px; }
+.sv-case-art { min-width: 0; }
+.sv-case-art > img { width: 100%; height: auto; border: 1px solid var(--line-2); border-radius: 14px; }
+.sv-case-art.is-square > img { max-width: 360px; margin-inline: auto; }
+.sv-phones { display: flex; justify-content: center; gap: clamp(8px, 1.2vw, 18px); }
+.sv-phones img { width: 31%; height: auto; border: 1px solid var(--line-2); border-radius: clamp(14px, 1.8vw, 26px); }
+.sv-phones img:nth-child(2) { transform: translateY(-5%); }
+
+/* ---------- Steps ---------- */
+.sv-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(20px, 3vw, 44px); margin-top: clamp(36px, 4vw, 60px); counter-reset: step; }
+.sv-steps li { padding-top: 18px; border-top: 2px solid var(--ink); counter-increment: step; }
+.sv-steps li::before { content: counter(step); display: block; margin-bottom: 14px; font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--ink-muted); }
+.sv-steps h3 { font-size: clamp(20px, 1.7vw, 25px); line-height: 1.16; letter-spacing: -.02em; font-weight: 500; text-wrap: balance; }
+.sv-steps p { margin-top: 10px; color: var(--ink-muted); line-height: 1.55; text-wrap: pretty; }
+
+/* ---------- Brief form ---------- */
+.sv-brief { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(36px, 6vw, 96px); align-items: start; scroll-margin-top: 90px; }
+.sv-form { display: grid; gap: 22px; }
+.sv-field { display: grid; gap: 9px; }
+.sv-field label { font-size: 15px; font-weight: 600; }
+.sv-field input, .sv-field textarea { width: 100%; padding: 15px 16px; border: 1px solid var(--line-2); border-radius: 10px; background: var(--surface); color: var(--text); font: 400 17px/1.45 var(--font-sans); caret-color: var(--lime); transition: border-color .2s ease, background .2s ease; }
+.sv-field textarea { min-height: 150px; resize: vertical; }
+.sv-field input::placeholder, .sv-field textarea::placeholder { color: var(--faint); }
+.sv-field input:hover, .sv-field textarea:hover { border-color: rgba(237, 234, 224, .32); }
+.sv-field input:focus, .sv-field textarea:focus { border-color: var(--lime); background: var(--surface-2); }
+.sv-field input:focus-visible, .sv-field textarea:focus-visible { outline: 2px solid var(--lime); outline-offset: 1px; border-radius: 10px; }
+.sv-field [aria-invalid="true"] { border-color: var(--coral); }
+.sv-field input:user-invalid, .sv-field textarea:user-invalid { border-color: var(--coral); }
+.sv-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.sv-form-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
+.sv-form-foot .btn[disabled] { opacity: .6; cursor: progress; }
+.sv-privacy { flex: 1 1 240px; color: var(--faint); font-size: 14px; line-height: 1.5; }
+.sv-status.is-error { padding: 14px 16px; border: 1px solid var(--coral); border-radius: 10px; color: var(--text); line-height: 1.5; }
+.sv-status a { color: var(--lime); text-underline-offset: 3px; }
+.sv-done { padding: clamp(24px, 3vw, 40px); border: 1px solid var(--lime); border-radius: 14px; outline: none; }
+.sv-done h3 { font-size: clamp(24px, 2.4vw, 34px); letter-spacing: -.025em; font-weight: 500; }
+.sv-done p { margin-top: 10px; color: var(--muted); line-height: 1.55; }
+
+.sv-direct { margin-top: 22px; color: var(--muted); font-size: 15px; line-height: 1.7; }
+.sv-direct a { color: var(--text); text-underline-offset: 4px; }
+.sv-direct a:hover { color: var(--lime); }
+
+/* ---------- Pay ---------- */
+.sv-pay { max-width: 860px; }
+.sv-pay-list { margin-top: 36px; border-top: 1px solid var(--line-2); }
+.sv-pay-list li { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding: 20px 0; border-bottom: 1px solid var(--line-2); }
+.sv-pay-list [hidden] { display: none; }
+.sv-pay-list b { font-size: 19px; font-weight: 600; letter-spacing: -.01em; }
+.sv-pay-list small { display: block; margin-top: 4px; color: var(--muted); font-size: 15px; }
+
+/* ---------- Footer ---------- */
+.sv-footer { padding: 32px 0 40px; border-top: 1px solid var(--line); color: var(--faint); font-size: 14px; }
+.sv-footer .shell { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px; }
+.sv-footer nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.sv-footer a { min-height: 32px; display: inline-flex; align-items: center; text-decoration: none; }
+.sv-footer a:hover { color: var(--lime); }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 980px) {
+  .sv-hero-split, .sv-brief, .sv-about, .sv-case { grid-template-columns: minmax(0, 1fr); }
+  .sv-wall { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .sv-tile:nth-child(1), .sv-tile:nth-child(4) { grid-column: span 6; }
+  .sv-tile:nth-child(2) { grid-column: span 4; }
+  .sv-tile:nth-child(3) { grid-column: span 2; }
+  .sv-tile-media { height: clamp(220px, 52vw, 420px); }
+  .sv-route { grid-template-columns: minmax(0, 1fr) 150px; }
+  .sv-route-problem { grid-column: 1 / -1; }
+  .sv-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sv-portrait { max-width: 320px; }
+}
+@media (max-width: 620px) {
+  .sv-rows > li { grid-template-columns: minmax(0, 1fr); }
+  .sv-steps { grid-template-columns: minmax(0, 1fr); }
+  .sv-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sv-tile:nth-child(1), .sv-tile:nth-child(2) { grid-column: span 2; }
+  .sv-tile:nth-child(3), .sv-tile:nth-child(4) { grid-column: span 1; }
+  .sv-tile:nth-child(1) .sv-tile-media { height: 54vw; }
+  .sv-tile:nth-child(2) .sv-tile-media { height: auto; }
+  .sv-tile:nth-child(3) .sv-tile-media, .sv-tile:nth-child(4) .sv-tile-media { height: 58vw; }
+  .sv-tile-meta { flex-direction: column; }
+  .sv .btn-sm, .sv .link-arrow, .sv .pf-variants button, .sv-footer a, .sv-proof a, .sv-direct a { min-height: 44px; }
+  .sv-proof a, .sv-direct a { display: inline-flex; align-items: center; }
+  .sv-route-price { font-size: 14px; }
+  .sv-proof li { grid-template-columns: minmax(0, 1fr); }
+  .sv-label { grid-column: 1; grid-row: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sv-h1, .sv-hero-copy, .sv-tile, .sv-log li { animation: none; }
+  .sv-route-problem, .sv-tile-media { transition: none; }
+}
+
+/* The service pages keep their menu on tablets; styles.css hides it below 1180px. */
+@media (min-width: 900px) and (max-width: 1180px) { .sv .site-nav { display: flex; } }

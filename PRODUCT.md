@@ -9,7 +9,8 @@ web
 ## Users
 - **/portfolio (new, 29.10.2026):** clients on Upwork who got Dmytro's proposal for a video job. They are app, game and SaaS founders or marketers deciding in a minute or two whether to reply. Upwork portfolio cards are visible only to signed-in users, so the proposal links here instead.
 - **/ (home):** hiring teams for SaaS/startup roles (support, ops, product).
-- **/websites:** local businesses in Greece (Greek-first).
+- **/websites:** small businesses anywhere, in English. Fixed packages. The Greek local offer was dropped on 04.11.2026: no Greek, no first-client framing, no Nea Makri.
+- **/services, /automations, /apps, /videos (new, 04.11.2026):** companies reached by personalised B2B outreach, in English. Each email links to the page that matches the company's problem. They decide in a minute whether to reply or fill in the brief form.
 
 ## Product Purpose
 Dmytro Nour's personal site. The /portfolio page sells one service: short AI video ads for apps, SaaS and games. Success = the client watches at least one ad and replies to the proposal or orders a package on Upwork.
@@ -18,6 +19,8 @@ Dmytro Nour's personal site. The /portfolio page sells one service: short AI vid
 He builds and ships his own apps (CreatorZen on iOS, Bodyclimb in progress), so his ads come from someone who knows how apps work and what users care about. One project yields several hooks and formats for testing. He labels everything honestly: own products vs spec ads for made-up brands, AI presenters disclosed.
 
 ## Operating Context
+B2B pages: leads arrive through the brief form (/api/lead: email to Dmytro, optional CRM webhook, outreach utm/ref attached). Custom work is quoted first, then a deposit by payment link or invoice; /pay (noindex) lists fixed-price Stripe links. Keep /portfolio free of off-Upwork payment and of links to the B2B pages: it is linked from Upwork proposals.
+
 Linked from Upwork proposals; opened on desktop and phones. Deals and payment go through Upwork (Project Catalog listing, $49 / $99 / $199, live since 28.10.2026). Profile: https://www.upwork.com/freelancers/~01aa982f956c4b1da4
 
 ## Capabilities and Constraints
@@ -27,7 +30,7 @@ Linked from Upwork proposals; opened on desktop and phones. Deals and payment go
 - Prices shown with a link to order on Upwork (his answer 29.10).
 
 ## Brand Commitments
-- English for the portfolio and home; /websites is Greek-first.
+- English everywhere.
 - Header stays fixed; no hide-on-scroll (flickers on his trackpad).
 - CreatorZen is the flagship product.
 
