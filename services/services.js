@@ -52,8 +52,8 @@
       const d = new FormData(form);
       const body = `${d.get("company")}\n\n${d.get("message")}`;
       const a = document.createElement("a");
-      a.href = `mailto:dmitri.nour@gmail.com?subject=${encodeURIComponent("Project brief")}&body=${encodeURIComponent(body)}`;
-      a.textContent = "dmitri.nour@gmail.com";
+      a.href = `mailto:hello@dmytronour.work?subject=${encodeURIComponent("Project brief")}&body=${encodeURIComponent(body)}`;
+      a.textContent = "hello@dmytronour.work";
       status.append(" ", a);
     }
   };

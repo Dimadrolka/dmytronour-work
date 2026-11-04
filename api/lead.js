@@ -39,7 +39,7 @@ async function emailLead(lead) {
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
     signal: AbortSignal.timeout(TIMEOUT_MS),
     body: JSON.stringify({
-      from: process.env.LEAD_FROM || "dmytronour.work <leads@creatorzen.ai>",
+      from: process.env.LEAD_FROM || "Dmytro Nour <leads@creatorzen.ai>",
       to: [to],
       reply_to: lead.email,
       subject: `New brief (${lead.service}): ${lead.company}`,
