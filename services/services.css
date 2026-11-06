@@ -310,3 +310,10 @@
 .paper .sv-ranges small { color: var(--ink-muted); }
 .sv-ranges-note { margin-top: 14px; color: var(--muted); font-size: 14px; line-height: 1.55; }
 .paper .sv-ranges-note { color: var(--ink-muted); }
+
+/* One header on every service page: the current page is marked, nothing moves. */
+.sv .site-nav a[aria-current="page"] { color: var(--text); }
+.sv .site-nav a[aria-current="page"]::after { transform: scaleX(1); transform-origin: left; }
+.sv-menu nav a[aria-current="page"] { color: var(--lime); }
+.sv-footer span a { color: inherit; text-underline-offset: 3px; }
+.sv-footer span a:hover { color: var(--lime); }

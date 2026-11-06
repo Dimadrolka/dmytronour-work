@@ -24,7 +24,7 @@ B2B pages: leads arrive through the brief form (/api/lead: email to Dmytro, opti
 Linked from Upwork proposals; opened on desktop and phones. Deals and payment go through Upwork (Project Catalog listing, $49 / $99 / $199, live since 28.10.2026). Profile: https://www.upwork.com/freelancers/~01aa982f956c4b1da4
 
 ## Capabilities and Constraints
-- Commercial navigation has explicit Pricing and Pay for a project links. Mobile uses a native details menu instead of hiding navigation. Each service retains its own pricing/quote section and brief.
+- One shared header on all six B2B pages (since 06.11.2026, his request): Websites · Automations · Apps & Tools · Videos · Pricing (the current page's prices) · Pay for a project, current page marked, CTA "Get a quote"; one shared footer. Never per-page anchor menus. Mobile uses a native details menu instead of hiding navigation. Each service retains its own pricing/quote section and brief.
 - /services#pricing is the overview; /websites#prices lists the existing fixed packages. Price ranges set 06.11.2026 at his request from market research: automations one workflow €290–790, connected system €900–2,500; apps internal tool €1,500–4,000, MVP or client portal €4,000–9,000; single video ads $49/$99/$199 (Upwork tiers). The quote is one exact figure inside the range; never invent other prices.
 - /pay?service=websites shows the five website payments; /pay?service=automations|apps|videos shows the agreed custom-project payment. /pay without a service lists all six links. Payment remains for agreed work, not an unconditional purchase before scoping.
 - Static HTML/CSS/JS on Vercel (www.dmytronour.work); each page is a folder with its own CSS/JS on top of the root styles.css.
