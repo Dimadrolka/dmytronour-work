@@ -1,5 +1,42 @@
 /* /services and the service pages: header glass, outreach attribution, brief form. */
 (() => {
+  // Navigation works without JS; close the mobile menu after choosing a destination.
+  document.querySelectorAll('.sv-menu').forEach((menu) => {
+    menu.addEventListener('click', (event) => {
+      if (event.target.closest('a')) menu.open = false;
+    });
+    menu.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        menu.open = false;
+        menu.querySelector('summary').focus();
+      }
+    });
+  });
+
+  // A link from a service page keeps the payment choices on that same service.
+  const paymentList = document.querySelector('[data-payment-list]');
+  const paymentService = new URLSearchParams(location.search).get('service');
+  const paymentNames = { websites: 'website', automations: 'automation', apps: 'app or tool', videos: 'video' };
+  if (paymentList && Object.hasOwn(paymentNames, paymentService)) {
+    const website = paymentService === 'websites';
+    paymentList.querySelectorAll('[data-payment-service]').forEach((row) => {
+      row.hidden = row.dataset.paymentService !== (website ? 'websites' : 'custom');
+    });
+    const title = document.querySelector('[data-payment-title]');
+    title.textContent = 'Pay for your ';
+    const subject = document.createElement('em');
+    subject.textContent = `${paymentNames[paymentService]}.`;
+    title.append(subject);
+    document.querySelector('[data-payment-prompt]').textContent = 'Want to review the offer?';
+    if (!website) {
+      paymentList.querySelector('[data-payment-service="custom"] b').textContent = `Your ${paymentNames[paymentService]}`;
+      paymentList.querySelector('[data-payment-service="custom"] small').textContent = 'Enter the deposit or amount from your agreed proposal.';
+    }
+    const back = document.querySelector('[data-payment-back]');
+    back.href = `/${paymentService}#${website ? 'prices' : 'pricing'}`;
+    back.textContent = `Back to ${website ? 'website packages' : paymentNames[paymentService] + ' pricing'}`;
+  }
+
   const header = document.querySelector("[data-header]");
   if (header) {
     // Glass only; the header never hides on scroll.

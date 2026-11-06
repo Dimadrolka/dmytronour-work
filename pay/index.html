@@ -35,27 +35,37 @@
           <span class="brand-name">Dmytro Nour</span>
         </a>
         <nav class="site-nav" aria-label="Page">
+          <a href="/services">Services</a>
+          <a href="/services#pricing">Pricing</a>
           <a href="/websites">Websites</a>
-          <a href="/automations">Automations</a>
-          <a href="/apps">Apps &amp; Tools</a>
-          <a href="/videos">Videos</a>
+          <a href="/services#brief">Ask about a project</a>
         </nav>
         <a class="btn btn-lime btn-sm" href="/services#brief">Get a proposal <span aria-hidden="true">↗</span></a>
+        <details class="sv-menu">
+          <summary>Menu</summary>
+          <nav aria-label="Mobile page navigation">
+          <a href="/services">Services</a>
+          <a href="/services#pricing">Pricing</a>
+          <a href="/websites">Websites</a>
+          <a href="/services#brief">Ask about a project</a>
+          </nav>
+        </details>
       </div>
     </header>
 
     <main id="main">
       <section class="sv-hero" aria-labelledby="sv-title">
         <div class="shell sv-pay">
-          <h1 class="sv-h1" id="sv-title">Pay for <em>an agreed job.</em></h1>
-          <p class="sv-lead">Use this page once we've agreed the work and the price. Payments go through Stripe, and your card details never reach me.</p>
-          <ul class="sv-pay-list">
-            <li><div><b>Website: Starter</b><small>€149, one-off</small></div><a class="btn btn-lime btn-sm" href="https://buy.stripe.com/00w00le7cdOjg1Se7z5EY04" rel="noopener">Pay €149 <span aria-hidden="true">↗</span></a></li>
-            <li><div><b>Website: With bookings</b><small>€249, one-off</small></div><a class="btn btn-lime btn-sm" href="https://buy.stripe.com/28E28t9QW9y302U3sV5EY05" rel="noopener">Pay €249 <span aria-hidden="true">↗</span></a></li>
-            <li><div><b>Website: Rentals and hotels</b><small>The €390–990 we agreed, you enter the amount</small></div><a class="btn btn-lime btn-sm" href="https://buy.stripe.com/dRm3cxfbg39FcPG2oR5EY07" rel="noopener">Pay for the site <span aria-hidden="true">↗</span></a></li>
-            <li><div><b>Website fix</b><small>The €80–150 we agreed, you enter the amount</small></div><a class="btn btn-lime btn-sm" href="https://buy.stripe.com/eVqeVfd38cKf8zqd3v5EY06" rel="noopener">Pay for the fix <span aria-hidden="true">↗</span></a></li>
-            <li><div><b>Website care</b><small>€15 a month, the first 3 months free, stop any time</small></div><a class="btn btn-lime btn-sm" href="https://buy.stripe.com/5kQ8wRe7ch0v5nefbD5EY09" rel="noopener">Start care <span aria-hidden="true">↗</span></a></li>
-            <li><div><b>Project payment</b><small>Automations, apps, videos: the deposit or amount from your proposal</small></div><a class="btn btn-lime btn-sm" href="https://buy.stripe.com/aFadRb3sy8tZaHy4wZ5EY08" rel="noopener">Pay for the project <span aria-hidden="true">↗</span></a></li>
+          <h1 class="sv-h1" id="sv-title" data-payment-title>Pay for <em>an agreed job.</em></h1>
+          <p class="sv-lead" data-payment-intro>Use this page once we've agreed the work and the price. Payments go through Stripe, and your card details never reach me.</p>
+          <p class="sv-direct"><span data-payment-prompt>Need to choose a service first?</span> <a href="/services#pricing" data-payment-back>See services &amp; pricing</a>.</p>
+          <ul class="sv-pay-list" data-payment-list>
+            <li data-payment-service="websites"><div><b>Website: Starter</b><small>€149, one-off</small></div><a class="btn btn-lime btn-sm" href="https://buy.stripe.com/00w00le7cdOjg1Se7z5EY04" rel="noopener">Pay €149 <span aria-hidden="true">↗</span></a></li>
+            <li data-payment-service="websites"><div><b>Website: With bookings</b><small>€249, one-off</small></div><a class="btn btn-lime btn-sm" href="https://buy.stripe.com/28E28t9QW9y302U3sV5EY05" rel="noopener">Pay €249 <span aria-hidden="true">↗</span></a></li>
+            <li data-payment-service="websites"><div><b>Website: Rentals and hotels</b><small>The €390–990 we agreed, you enter the amount</small></div><a class="btn btn-lime btn-sm" href="https://buy.stripe.com/dRm3cxfbg39FcPG2oR5EY07" rel="noopener">Pay for the site <span aria-hidden="true">↗</span></a></li>
+            <li data-payment-service="websites"><div><b>Website fix</b><small>The €80–150 we agreed, you enter the amount</small></div><a class="btn btn-lime btn-sm" href="https://buy.stripe.com/eVqeVfd38cKf8zqd3v5EY06" rel="noopener">Pay for the fix <span aria-hidden="true">↗</span></a></li>
+            <li data-payment-service="websites"><div><b>Website care</b><small>€15 a month, the first 3 months free, stop any time</small></div><a class="btn btn-lime btn-sm" href="https://buy.stripe.com/5kQ8wRe7ch0v5nefbD5EY09" rel="noopener">Start care <span aria-hidden="true">↗</span></a></li>
+            <li data-payment-service="custom"><div><b>Project payment</b><small>Automations, apps, videos: the deposit or amount from your proposal</small></div><a class="btn btn-lime btn-sm" href="https://buy.stripe.com/aFadRb3sy8tZaHy4wZ5EY08" rel="noopener">Pay for the project <span aria-hidden="true">↗</span></a></li>
           </ul>
         </div>
       </section>
@@ -66,6 +76,8 @@
         <span>© 2026 Dmytro Nour · Athens, Greece · works remotely</span>
         <nav aria-label="Footer">
           <a href="/services">All services</a>
+          <a href="/services#pricing">Pricing</a>
+          <a href="/pay">Pay for a project</a>
           <a href="/websites">Websites</a>
           <a href="/automations">Automations</a>
           <a href="/apps">Apps &amp; Tools</a>

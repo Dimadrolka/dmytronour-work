@@ -185,5 +185,32 @@
   .sv-route-problem, .sv-tile-media { transition: none; }
 }
 
-/* The service pages keep their menu on tablets; styles.css hides it below 1180px. */
-@media (min-width: 900px) and (max-width: 1180px) { .sv .site-nav { display: flex; } }
+/* A mobile menu replaces the desktop navigation instead of making it disappear. */
+.sv-menu { display: none; }
+.sv-menu summary { min-height: 44px; padding: 10px 12px; border: 1px solid var(--line-2); border-radius: 8px; cursor: pointer; color: var(--text); font-size: 15px; }
+.sv-menu nav { position: absolute; top: calc(var(--header-h) - 2px); right: var(--gutter); left: var(--gutter); display: grid; gap: 0; padding: 12px 20px; border: 1px solid var(--line-2); border-radius: 12px; background: var(--bg); box-shadow: 0 16px 30px rgba(0,0,0,.3); max-height: calc(100svh - var(--header-h) - 20px); overflow-y: auto; }
+.sv-menu nav a { display: flex; align-items: center; min-height: 48px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--line); font-size: 17px; }
+.sv-menu nav a:last-child { border-bottom: none; }
+.sv-menu nav a:hover { color: var(--lime); }
+.sv-price-list { margin-top: 32px; border-top: 1px solid var(--ink-line); }
+.sv-price-list li { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 26px 0; border-bottom: 1px solid var(--ink-line); }
+.sv-price-list h3 { font-size: 25px; line-height: 1.25; letter-spacing: -.02em; font-weight: 500; }
+.sv-price-list p { margin-top: 8px; color: var(--ink-muted); line-height: 1.5; }
+.sv-price-list a { flex: none; }
+.sv-pricing { max-width: 1000px; }
+#pricing, #prices { scroll-margin-top: calc(var(--header-h) + 20px); }
+.sv-price-overview { border-top: 1px solid var(--ink-line); }
+@media (max-width: 1180px) {
+  .sv .site-nav { display: none; }
+  .sv-menu { display: block; flex: none; }
+  .sv .header-inner { gap: 12px; }
+  .sv .header-inner > .btn, .sv .ws-actions { margin-left: auto; }
+}
+@media (max-width: 620px) {
+  .sv .brand-name { display: none; }
+  .sv .brand { flex: none; }
+  .sv .header-inner { gap: 8px; }
+  .sv .site-header .btn { padding-inline: 12px; font-size: 13px; }
+  .sv-price-list li { align-items: flex-start; flex-direction: column; gap: 12px; }
+  .sv-price-list a { min-height: 44px; }
+}
