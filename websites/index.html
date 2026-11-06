@@ -32,7 +32,7 @@
 
     <header class="site-header ws-header" data-header>
       <div class="shell header-inner">
-        <a class="brand" href="/" aria-label="Dmytro Nour">
+        <a class="brand" href="/services" aria-label="Dmytro Nour, all services">
           <span class="brand-mark" aria-hidden="true">dn<i>.</i></span>
           <span class="brand-name">Dmytro Nour</span>
         </a>
@@ -64,18 +64,13 @@
       <section class="ws-hero" aria-labelledby="ws-title">
         <div class="shell ws-hero-grid">
           <div class="ws-hero-copy">
-            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>Websites for small businesses</p>
-            <h1 class="ws-title" id="ws-title">
-              
-              A website as good as your work. <em>Live in a week.</em>
-            </h1>
-            <p class="ws-lead">
-              
-              I'm Dmytro. I've built and launched three apps, and I make websites for small businesses, working remotely. <strong>You see the idea first, and you pay once the site is live.</strong>
-            </p>
+            <p class="sv-hello" data-hello hidden><b>Here from my email<span data-hello-who></span>?</b> <span>The preview of your own site is free, and you decide after you've seen it. <a href="#brief">Ask for it below</a>, or just reply to my email.</span></p>
+            <h1 class="ws-title" id="ws-title">A website as good as your work. <em>Live in a week.</em></h1>
+            <div class="sv-by"><img src="/assets/portrait-sm.jpg" width="160" height="200" alt="" /><span><b>Dmytro Nour</b>I design and build every site myself, for small businesses anywhere.</span></div>
+            <p class="ws-lead">Bookings, prices, photos and reviews on one fast page your customers can use from their phone. <strong>You see a free preview of your own site first, and you pay only once it's live.</strong></p>
             <div class="ws-hero-actions">
-              <a class="btn btn-lime" href="#prices">See prices <span aria-hidden="true">↓</span></a>
-              <a class="btn btn-ghost" href="#how">How it works</a>
+              <a class="btn btn-lime" href="#brief">Get a free preview <span aria-hidden="true">↓</span></a>
+              <a class="btn btn-ghost" href="#prices">See prices</a>
             </div>
           </div>
 
@@ -98,7 +93,7 @@
           <div class="section-head" data-reveal>
             <p class="kicker"><span>01</span>Examples</p>
             <h2 id="examples-title">Nine sites. <em>Each built around one idea.</em></h2>
-            <p class="section-lead">Concept sites for fictional businesses, so the names, people and photos are invented, but everything works. Most are in Greek, because that's where I started; yours will speak your customers' language. <strong>Open them on your phone.</strong></p>
+            <p class="section-lead">Concept sites for fictional businesses, so the names, people and photos are invented, but everything works. Most were made for Greek businesses, so they're in Greek; yours will speak your customers' language. <strong>Open them on your phone.</strong></p>
           </div>
           <ul class="ws-ex-grid">
             <li data-reveal>
@@ -204,7 +199,7 @@
                 <li>In one language</li>
               </ul>
               <p class="ws-plan-foot">Not included: extra pages, bookings, online payments, a logo.</p>
-              <a class="btn btn-ink" href="#brief">I want this <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-ink" href="#brief" data-pick="Starter, 149 €">Choose Starter <span aria-hidden="true">↓</span></a>
             </article>
 
             <article class="ws-plan ws-plan-pick" aria-labelledby="plan-booking" data-reveal style="--d: 90ms">
@@ -226,7 +221,7 @@
                 <li>Linked to your Google Business Profile</li>
               </ul>
               <p class="ws-plan-foot">Not included: online payments, a live calendar, a logo.</p>
-              <a class="btn btn-lime" href="#brief">I want this <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-lime" href="#brief" data-pick="With bookings, 249 €">Choose With bookings <span aria-hidden="true">↓</span></a>
             </article>
 
             <article class="ws-plan ws-plan-stay" aria-labelledby="plan-stay" data-reveal style="--d: 180ms">
@@ -244,11 +239,11 @@
                 <li>Every room or apartment with photos, beds and a price for the guest’s dates</li>
                 <li>Booking requests on your phone; close full dates with one tap</li>
                 <li>Your direct price next to the Booking price</li>
-                <li>Map and directions from the airport and the port</li>
+                <li>Map and directions for arriving guests</li>
                 <li>Up to three languages</li>
               </ul>
               <p class="ws-plan-foot">Not included: online payments, a channel manager, a professional photo shoot.</p>
-              <a class="btn btn-ink" href="#brief">I want this <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-ink" href="#brief" data-pick="Rentals &amp; hotels, 390–990 €">Choose Rentals <span aria-hidden="true">↓</span></a>
             </article>
 
             <article class="ws-plan ws-plan-care" aria-labelledby="plan-care" data-reveal style="--d: 270ms">
@@ -290,7 +285,7 @@
                 <li>A form or booking that doesn’t send</li>
                 <li>If it really needs a new site, I’ll tell you first</li>
               </ul>
-              <a class="btn btn-ink" href="#brief">I need a fix <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-ink" href="#brief" data-pick="Fix, 80–150 €">I need a fix <span aria-hidden="true">↓</span></a>
             </article>
           </div>
 
@@ -445,7 +440,7 @@
         <div class="shell sv-brief">
           <div>
             <h2 class="sv-h2" id="brief-title">Want to see <em>your own site?</em></h2>
-            <p class="sv-lead">Send me your business. I'll build a free preview and send you the link.</p>
+            <p class="sv-lead">Send me your business. I'll build a free preview and send you the link. I reply within one working day.</p>
             <p class="sv-direct">Prefer to write directly? <a href="mailto:hello@dmytronour.work">hello@dmytronour.work</a> or <a href="https://www.linkedin.com/in/dmytro-nour-6ab7611bb/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></p>
           </div>
           <form class="sv-form" data-brief action="/api/lead" method="post">

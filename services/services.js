@@ -74,8 +74,47 @@
     try { sessionStorage.setItem(KEY, JSON.stringify(source)); } catch (e) {}
   }
 
+  // A visitor from my email (?ref=, ?for= or utm_medium=email) sees one line that connects the page to that email.
+  // ?for=Company names them; the text is set as text, never as HTML.
+  const hello = document.querySelector("[data-hello]");
+  const fromEmail = params.get("ref") || params.get("for") || params.get("utm_medium") === "email";
+  if (hello && fromEmail) {
+    const who = (params.get("for") || "").replace(/[^\p{L}\p{N} &.,'’-]/gu, "").trim().slice(0, 60);
+    const slot = hello.querySelector("[data-hello-who]");
+    if (who && slot) slot.textContent = ` for ${who}`;
+    hello.hidden = false;
+  }
+
+  // Hours calculator on /automations: the visitor's numbers, half of it automated.
+  const calc = document.querySelector("[data-calc]");
+  if (calc) {
+    const num = (name) => Math.max(0, Number(calc.elements[name].value) || 0);
+    const euro = (n) => `€${Math.round(n).toLocaleString("en-GB")}`;
+    const total = calc.querySelector("[data-calc-total]");
+    const back = calc.querySelector("[data-calc-back]");
+    const update = () => {
+      const year = num("hours") * num("people") * num("rate") * 46;
+      total.textContent = `${euro(year)} a year`;
+      back.textContent = euro(year / 2);
+    };
+    calc.addEventListener("input", update);
+    calc.addEventListener("submit", (event) => event.preventDefault());
+    update();
+  }
+
   const form = document.querySelector("[data-brief]");
   if (!form) return;
+
+  // "Choose this package" links start the brief with the package already named.
+  document.querySelectorAll("[data-pick]").forEach((link) => {
+    link.addEventListener("click", () => {
+      const box = form.elements.message;
+      const line = `Package: ${link.dataset.pick}.`;
+      if (!box.value.trim()) box.value = `${line}\n`;
+      else if (!box.value.startsWith("Package:")) box.value = `${line}\n${box.value}`;
+      else box.value = box.value.replace(/^Package:[^\n]*/, line);
+    });
+  });
   const status = form.querySelector("[data-brief-status]");
   const button = form.querySelector("button[type=submit]");
   const label = button.querySelector("[data-label]");
@@ -123,7 +162,7 @@
         done.className = "sv-done";
         done.setAttribute("role", "status");
         done.tabIndex = -1;
-        done.innerHTML = "<h3>Got it. Thank you.</h3><p>I'll read it myself and reply to the email you gave, with a practical first step.</p>";
+        done.innerHTML = "<h3>Got it. Thank you.</h3><p>I'll read it myself and reply to the email you gave within one working day, with a practical first step and, where I can, a price.</p>";
         form.replaceWith(done);
         done.focus({ preventScroll: true });
         return;

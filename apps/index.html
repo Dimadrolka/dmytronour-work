@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Web apps, MVPs and internal tools · Dmytro Nour</title>
-    <meta name="description" content="Web apps, MVPs and internal tools from someone who has shipped his own products to the App Store and the web. Fixed quote agreed before work starts." />
+    <meta name="description" content="Web apps, MVPs and internal tools from someone who has shipped his own products to the App Store and the web. Internal tools from €1,500, with a fixed price agreed before work starts." />
     <meta name="theme-color" content="#0a0b0a" />
     <meta name="author" content="Dmytro Nour" />
     <meta name="robots" content="index, follow" />
@@ -12,7 +12,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Dmytro Nour" />
     <meta property="og:title" content="Web apps, MVPs and internal tools · Dmytro Nour" />
-    <meta property="og:description" content="Web apps, MVPs and internal tools from someone who has shipped his own products to the App Store and the web. Fixed quote agreed before work starts." />
+    <meta property="og:description" content="Web apps, MVPs and internal tools from someone who has shipped his own products to the App Store and the web. Internal tools from €1,500, with a fixed price agreed before work starts." />
     <meta property="og:url" content="https://www.dmytronour.work/apps" />
     <meta property="og:image" content="https://www.dmytronour.work/assets/og-image.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -41,7 +41,7 @@
           <a href="/pay?service=apps">Pay for a project</a>
           <a href="/services">All services</a>
         </nav>
-        <a class="btn btn-lime btn-sm" href="#brief">Get a proposal <span aria-hidden="true">↓</span></a>
+        <a class="btn btn-lime btn-sm" href="#brief">Get a quote <span aria-hidden="true">↓</span></a>
         <details class="sv-menu">
           <summary>Menu</summary>
           <nav aria-label="Mobile page navigation">
@@ -58,13 +58,14 @@
     <main id="main">
       <section class="sv-hero" aria-labelledby="sv-title">
         <div class="shell">
+          <p class="sv-hello" data-hello hidden><b>Here from my email<span data-hello-who></span>?</b> <span>The short version: I build the smallest real version of the tool you need, in your name, for a fixed price agreed first. <a href="#brief">Describe the job</a>, or just reply to my email.</span></p>
           <h1 class="sv-h1" id="sv-title">Software for the job <em>your tools don't quite do.</em></h1>
+          <div class="sv-by"><img src="/assets/portrait-sm.jpg" width="160" height="200" alt="" /><span><b>Dmytro Nour</b>I build it myself and I'm the one you talk to. Athens, working with clients anywhere.</span></div>
           <div class="sv-hero-copy">
             <p class="sv-lead">Web apps, MVPs and internal tools. I've taken my own products from the first line of code to the App Store, then kept improving them from what users actually do.</p>
             <div class="sv-actions">
               <a class="btn btn-lime" href="#brief">Get a quote <span aria-hidden="true">↓</span></a>
               <a class="link-arrow" href="#products">See what I've built <span aria-hidden="true">↓</span></a>
-              <a class="link-arrow" href="#pricing">Pricing &amp; payment <span aria-hidden="true">↓</span></a>
             </div>
           </div>
 
@@ -118,23 +119,52 @@
             <li><h3>A web app or client portal</h3><p>Accounts, payments, dashboards and the logic specific to your business.</p></li>
             <li><h3>What you'd get</h3><p>A fixed quote, the code in your repository, accounts in your name and a handover. Usual stack: Next.js, Expo, Supabase, Vercel.</p></li>
           </ul>
-          <h2 class="sv-h2 sv-steps-title" id="how">You know the price <em>before anything starts.</em></h2>
+        </div>
+      </section>
+
+      <section class="sv-section" id="pricing" aria-labelledby="pricing-title">
+        <div class="shell">
+          <div class="sv-deal">
+            <div>
+              <h2 class="sv-h2" id="pricing-title">What it costs, <em>and what you risk.</em></h2>
+              <p class="sv-lead">Your app or tool gets one fixed price, agreed in writing before any work starts. I'll suggest the smallest version worth building first, so you spend on what users actually need.</p>
+              <ul class="sv-ranges">
+                <li><b>An internal tool</b><strong>€1,500–4,000</strong><small>One main job done well, for your team: logins, a few screens, your data in one place instead of a spreadsheet.</small></li>
+                <li><b>An MVP or client portal</b><strong>€4,000–9,000</strong><small>A first version for real users: accounts, payments, an admin side and the logic specific to your business.</small></li>
+              </ul>
+              <p class="sv-ranges-note">Your quote is one exact figure inside these ranges. Hosting and database accounts are in your name; for a tool this size they usually cost €0–50 a month.</p>
+              <div class="sv-actions">
+                <a class="btn btn-lime" href="#brief">Get my quote <span aria-hidden="true">↓</span></a>
+                <a class="link-arrow" href="/pay?service=apps">Already agreed? Pay for your project <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+            <ul class="sv-promise">
+              <li><b>Asking is free.</b> I reply within one working day, and there is no charge for a quote.</li>
+              <li><b>One price in writing</b> for what gets built first, the date and the revisions, with no hourly meter.</li>
+              <li><b>You pay a deposit only after you accept</b> the proposal, by a secure payment link.</li>
+              <li><b>The code is yours from day one:</b> your repository, your accounts.</li>
+              <li><b>If the numbers say stop,</b> I'll say so, as I did with my own FounderDistro.</li>
+            </ul>
+          </div>
+          <h2 class="sv-h2 sv-steps-title" id="how">How it <em>works.</em></h2>
           <ol class="sv-steps">
-            <li><h3>Tell me the problem</h3><p>A few lines in the form below. No call needed yet.</p></li>
+            <li><h3>Tell me the job</h3><p>A few lines in the form below. No call needed yet.</p></li>
             <li><h3>Get a clear proposal</h3><p>What gets built first, the timeline, the revisions and a fixed price, in writing.</p></li>
             <li><h3>Pay the agreed deposit</h3><p>By a secure payment link. Work starts once it's confirmed.</p></li>
-            <li><h3>Review, then launch</h3><p>You see the work as it takes shape, and you get a handover at the end.</p></li>
+            <li><h3>Review, then launch</h3><p>You use it as it takes shape, and you get a handover at the end.</p></li>
           </ol>
         </div>
       </section>
 
-      <section class="sv-section paper" id="pricing" aria-labelledby="pricing-title">
-        <div class="shell sv-pricing">
-          <h2 class="sv-h2" id="pricing-title">A fixed price <em>for your app or internal tool.</em></h2>
-          <p class="sv-lead">Fixed quote after a brief. Tell me what you need; I'll confirm the scope, delivery date, revisions and total price before you commit. There is no automatic charge when you ask for a quote.</p>
-          <div class="sv-actions">
-            <a class="btn btn-ink" href="#brief">Get my quote <span aria-hidden="true">↓</span></a>
-            <a class="link-arrow" href="/pay?service=apps">Already agreed? Pay for your project <span aria-hidden="true">↗</span></a>
+      <section class="sv-section paper" id="faq" aria-labelledby="faq-title">
+        <div class="shell sv-faq">
+          <h2 class="sv-h2" id="faq-title">Before you <em>reply.</em></h2>
+          <div class="sv-qs">
+            <details class="sv-q"><summary>What exactly is an MVP?</summary><p>A minimum viable product: the smallest version real users can try. You learn what to build next before you spend more.</p></details>
+            <details class="sv-q"><summary>Who owns the code and the accounts?</summary><p>You do. The code lives in your repository and the hosting, database and store accounts are in your name from day one. The app works without me.</p></details>
+            <details class="sv-q"><summary>What do you build with?</summary><p>Usually Next.js for the web, Expo for iPhone and Android, Supabase for accounts and data, Vercel for hosting. If your team already uses something else, tell me in the brief.</p></details>
+            <details class="sv-q"><summary>What happens after launch?</summary><p>If something I built doesn't work as agreed, I fix it at no charge. New features are quoted the same way as the first version.</p></details>
+            <details class="sv-q"><summary>Why one person and not an agency?</summary><p>You talk to the person who builds it, so nothing gets lost between a salesperson and a developer. I take a few projects at a time, and I'll give you the start date before you commit.</p></details>
           </div>
         </div>
       </section>

@@ -19,7 +19,7 @@
 .ws-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse 45% 55% at 78% 40%, rgba(214, 242, 107, .08), transparent 70%), radial-gradient(ellipse 40% 50% at 8% 95%, rgba(167, 139, 250, .08), transparent 70%); }
 .ws-hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); align-items: center; gap: clamp(40px, 6vw, 96px); }
 .ws-title { margin-top: 28px; font-size: clamp(44px, 6vw, 94px); line-height: 1; letter-spacing: -.045em; font-weight: 600; text-wrap: balance; animation: fade-up 1s var(--ease) .1s both; }
-.ws-title em { display: inline; padding-right: .06em; font-family: var(--font-serif); font-style: italic; font-weight: 400; letter-spacing: -.02em; background: linear-gradient(100deg, var(--lime) 10%, #f2f6d2 60%, var(--lime) 95%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.ws-title em { display: inline; padding-right: .06em; font-family: var(--font-serif); font-style: italic; font-weight: 400; letter-spacing: -.02em; color: var(--lime); }
 .ws-lead { max-width: 600px; margin-top: 30px; color: var(--muted); font-size: clamp(17px, 1.35vw, 19.5px); line-height: 1.62; text-wrap: pretty; animation: fade-up 1s var(--ease) .25s both; }
 .ws-lead strong { color: var(--text); font-weight: 500; }
 .ws-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; animation: fade-up 1s var(--ease) .35s both; }
@@ -77,7 +77,7 @@
 .ws-plan { position: relative; display: flex; flex-direction: column; gap: 24px; padding: clamp(26px, 2.8vw, 38px); border: 1px solid var(--ink-line); border-radius: 30px; background: var(--paper-2); }
 .ws-plan-head h3 { font-size: clamp(28px, 2.6vw, 38px); line-height: 1.05; letter-spacing: -.045em; font-weight: 600; }
 .ws-plan-head p { margin-top: 10px; color: var(--ink-muted); font-size: 16px; line-height: 1.5; text-wrap: pretty; }
-.ws-plan-badge { position: absolute; top: clamp(22px, 2.4vw, 32px); right: clamp(22px, 2.4vw, 32px); padding: 7px 11px; border-radius: 999px; background: var(--ink); color: var(--paper); font: 500 10.5px/1 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; }
+.ws-plan-badge { position: absolute; top: clamp(22px, 2.4vw, 32px); right: clamp(22px, 2.4vw, 32px); padding: 7px 11px; border-radius: 999px; background: var(--ink); color: var(--paper); font: 500 12px/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
 .ws-plan-badge + .ws-plan-head h3 { padding-right: 120px; }
 .ws-price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding: 22px 0; border-top: 1px solid var(--ink-line); border-bottom: 1px solid var(--ink-line); }
 .ws-price s { color: var(--ink-muted); font-size: 22px; font-weight: 500; letter-spacing: -.02em; text-decoration-color: var(--coral); text-decoration-thickness: 2px; }
