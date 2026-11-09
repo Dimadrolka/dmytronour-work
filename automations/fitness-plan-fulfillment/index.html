@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Personalized Fitness Plan Fulfillment · Dmytro Nour</title>
+    <meta name="description" content="A historical Make MVP for generating and preparing delivery of personalized fitness-plan PDFs." />
+    <meta name="theme-color" content="#0a0b0a" />
+    <meta name="author" content="Dmytro Nour" />
+    <link rel="canonical" href="https://www.dmytronour.work/automations/fitness-plan-fulfillment" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Dmytro Nour" />
+    <meta property="og:title" content="Personalized Fitness Plan Fulfillment · Dmytro Nour" />
+    <meta property="og:description" content="A historical Make workflow that turned questionnaire answers into a personalized PDF." />
+    <meta property="og:url" content="https://www.dmytronour.work/automations/fitness-plan-fulfillment" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/services/services.css" />
+    <link rel="stylesheet" href="/automations/case-study.css" />
+    <script src="/services/services.js" defer></script>
+  </head>
+  <body class="sv triage-case">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="/" aria-label="Dmytro Nour, career portfolio">
+          <span class="brand-mark" aria-hidden="true">dn<i>.</i></span>
+          <span class="brand-name">Dmytro Nour</span>
+        </a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="/#cases">Case studies</a>
+          <a href="/#fit">Where I fit</a>
+          <a href="/#story">Experience</a>
+          <a href="/assets/Dmytro_Nour_Resume.pdf" type="application/pdf" download="Dmytro_Nour_Product_Support_CV.pdf">CV</a>
+          <a href="/automations">Automation services</a>
+        </nav>
+        <a class="btn btn-lime btn-sm" href="mailto:dmitri.nour@gmail.com?subject=Role%3A%20Product%20support%20%2F%20SaaS%20operations">Discuss a role <span aria-hidden="true">↗</span></a>
+        <details class="sv-menu">
+          <summary>Menu</summary>
+          <nav aria-label="Main, mobile">
+            <a href="/#cases">Case studies</a>
+            <a href="/#fit">Where I fit</a>
+            <a href="/#story">Experience</a>
+            <a href="/assets/Dmytro_Nour_Resume.pdf" type="application/pdf" download="Dmytro_Nour_Product_Support_CV.pdf">Download CV (PDF)</a>
+            <a href="/automations">Automation services</a>
+          </nav>
+        </details>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="triage-hero" aria-labelledby="make-title">
+        <div class="shell">
+          <a class="triage-back" href="/#cases">
+            <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M16 10H4m6-6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Back to career portfolio
+          </a>
+          <div class="triage-hero-grid">
+            <div>
+              <h1 id="make-title">Personalized Fitness <em>Plan Fulfillment</em></h1>
+              <p class="sv-lead">A Make workflow that turned a training questionnaire into a personalized PDF and prepared the link for email delivery.</p>
+              <p class="triage-scope">Historical own-product MVP · Make + Tally + OpenAI</p>
+              <a class="link-arrow triage-run-link" href="#make-evidence">See what I verified</a>
+            </div>
+            <figure class="make-sample">
+              <img src="/automations/fitness-plan-fulfillment/fitness-plan-sample.png" alt="An archived sample fitness plan showing the weekly training split and exercise tables." width="850" height="1100" />
+              <figcaption>Sample output from the historical PDF archive.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="triage-section paper" aria-labelledby="make-flow-title">
+        <div class="shell">
+          <div class="triage-editorial">
+            <h2 class="sv-h2" id="make-flow-title">From questionnaire <em>to a readable PDF.</em></h2>
+            <div class="triage-prose">
+              <p>The idea was to offer a training plan tailored to a person’s answers. I wrote the training rules and prompt, designed the PDF layout, and assembled and debugged the Make scenario by hand. I used AI chat for setup and troubleshooting help.</p>
+            </div>
+          </div>
+          <ol class="triage-flow" aria-label="Workflow steps">
+            <li><span>01</span><h3>Collect answers</h3><p>Tally collects the intake. Make maps the answers into a structured request.</p></li>
+            <li><span>02</span><h3>Generate HTML</h3><p>OpenAI uses my rules and template to generate the plan.</p></li>
+            <li><span>03</span><h3>Render and store</h3><p>CloudConvert renders the PDF. Make downloads a copy and stores it in Dropbox.</p></li>
+            <li><span>04</span><h3>Prepare delivery</h3><p>Make passes the name and PDF URL to MailerLite. A separate group-triggered automation uses them in the email.</p></li>
+          </ol>
+          <figure class="case-workflow">
+            <img src="/automations/fitness-plan-fulfillment/make-scenario.png" alt="The 12-module Make scenario connecting Tally, JSON, OpenAI, CloudConvert, Dropbox and MailerLite." width="2726" height="1266" loading="lazy" decoding="async" />
+            <figcaption>
+              <span>Archived Make scenario showing the modules and their connections.</span>
+              <a href="/automations/fitness-plan-fulfillment/make-scenario.png">Open full-size screenshot</a>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="triage-section" id="make-evidence" aria-labelledby="make-evidence-title">
+        <div class="shell">
+          <div class="triage-editorial">
+            <h2 class="sv-h2" id="make-evidence-title">What the archive <em>could prove.</em></h2>
+            <div class="triage-prose">
+              <p>The saved blueprint contains 12 modules and 29 mapped fields. The archive contains 14 PDFs. The MailerLite configuration shows the group trigger and personalization fields. Its activity snapshot shows eight emails sent and a 50% bounce rate.</p>
+              <p>The MVP had zero buyers. The evidence comes from saved configurations, archived outputs and an activity snapshot. A fresh end-to-end run and individual delivery would still need verification.</p>
+            </div>
+          </div>
+          <div class="triage-safety">
+            <h3>What I would check before relaunching</h3>
+            <p>The scenario checked for a finished export once. I’d test delayed conversion and add bounded polling before download. I’d also verify which link reaches the inbox and how long it stays valid. The archive review found a formatting artifact in one file and a footer overlap in another, so I’d add a PDF layout check before delivery.</p>
+          </div>
+          <div class="case-hire" aria-label="Next steps">
+            <p>Hiring for product support or SaaS operations?</p>
+            <div class="case-hire-actions">
+              <a class="btn btn-lime" href="mailto:dmitri.nour@gmail.com?subject=Role%3A%20Product%20support%20%2F%20SaaS%20operations">Discuss a role <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-ghost" href="/assets/Dmytro_Nour_Resume.pdf" type="application/pdf" download="Dmytro_Nour_Product_Support_CV.pdf">Download CV <span aria-hidden="true">↓</span></a>
+              <a class="link-arrow" href="/#cases">All case studies</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="sv-footer">
+      <div class="shell">
+        <span>© 2026 Dmytro Nour · Athens, Greece · works remotely · <a href="mailto:hello@dmytronour.work">hello@dmytronour.work</a></span>
+        <nav aria-label="Footer">
+          <a href="/websites">Websites</a>
+          <a href="/automations">Automations</a>
+          <a href="/apps">Apps &amp; Tools</a>
+          <a href="/videos">Videos</a>
+          <a href="/services">All services</a>
+          <a href="/services#pricing">Pricing</a>
+          <a href="/pay">Pay for a project</a>
+          <a href="/services#work">My work</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

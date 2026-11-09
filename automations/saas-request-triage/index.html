@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>AI Support Triage: Testing, Failure Analysis &amp; Human Review · Dmytro Nour</title>
+    <meta name="description" content="A practice project that uses AI to draft replies for a support team to review. Tested with made-up customer messages." />
+    <meta name="theme-color" content="#0a0b0a" />
+    <meta name="author" content="Dmytro Nour" />
+    <link rel="canonical" href="https://www.dmytronour.work/automations/saas-request-triage" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Dmytro Nour" />
+    <meta property="og:title" content="AI Support Triage: Testing, Failure Analysis &amp; Human Review · Dmytro Nour" />
+    <meta property="og:description" content="AI drafts a reply. A support team member checks it and decides what to send." />
+    <meta property="og:url" content="https://www.dmytronour.work/automations/saas-request-triage" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/services/services.css" />
+    <link rel="stylesheet" href="/automations/case-study.css" />
+    <script src="/services/services.js" defer></script>
+  </head>
+  <body class="sv triage-case">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="/" aria-label="Dmytro Nour, career portfolio">
+          <span class="brand-mark" aria-hidden="true">dn<i>.</i></span>
+          <span class="brand-name">Dmytro Nour</span>
+        </a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="/#cases">Case studies</a>
+          <a href="/#fit">Where I fit</a>
+          <a href="/#story">Experience</a>
+          <a href="/assets/Dmytro_Nour_Resume.pdf" type="application/pdf" download="Dmytro_Nour_Product_Support_CV.pdf">CV</a>
+          <a href="/automations">Automation services</a>
+        </nav>
+        <a class="btn btn-lime btn-sm" href="mailto:dmitri.nour@gmail.com?subject=Role%3A%20Product%20support%20%2F%20SaaS%20operations">Discuss a role <span aria-hidden="true">↗</span></a>
+        <details class="sv-menu">
+          <summary>Menu</summary>
+          <nav aria-label="Main, mobile">
+            <a href="/#cases">Case studies</a>
+            <a href="/#fit">Where I fit</a>
+            <a href="/#story">Experience</a>
+            <a href="/assets/Dmytro_Nour_Resume.pdf" type="application/pdf" download="Dmytro_Nour_Product_Support_CV.pdf">Download CV (PDF)</a>
+            <a href="/automations">Automation services</a>
+          </nav>
+        </details>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="triage-hero" aria-labelledby="triage-title">
+        <div class="shell">
+          <a class="triage-back" href="/#cases">
+            <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M16 10H4m6-6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Back to career portfolio
+          </a>
+          <div class="triage-hero-grid">
+            <div>
+              <h1 id="triage-title">AI Support Triage <em>with human review</em></h1>
+              <p class="sv-lead">When a customer asks for help, AI suggests a reply. A support team member checks the draft and decides what to send.</p>
+              <p class="triage-scope">Practice project · Tested with made-up customer messages · n8n + Gemini</p>
+              <a class="link-arrow triage-run-link" href="#verified-run">See the test results</a>
+            </div>
+            <figure class="triage-trace" aria-labelledby="trace-caption">
+              <figcaption id="trace-caption"><span>Test #50</span><span>Three examples</span></figcaption>
+              <dl>
+                <div>
+                  <dt>Billing question</dt>
+                  <dd><strong>Draft saved</strong><span>Waiting for someone to review it</span></dd>
+                </div>
+                <div>
+                  <dt>Same request again</dt>
+                  <dd><strong>Repeat recorded</strong><span>The original draft stays in place</span></dd>
+                </div>
+                <div>
+                  <dt>Empty message</dt>
+                  <dd><strong>Request rejected</strong><span>The reason is saved</span></dd>
+                </div>
+              </dl>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="triage-section paper" aria-labelledby="approach-title">
+        <div class="shell">
+          <div class="triage-editorial">
+            <h2 class="sv-h2" id="approach-title">How <em>it works.</em></h2>
+            <div class="triage-prose">
+              <p>Writing a support reply takes time. Someone has to read the message, look up the right information, and decide what to say. I wanted to see whether starting with a draft could save time.</p>
+              <p>I built and tested the workflow with AI assistance. I checked how it sorted requests, reviewed the draft replies, and timed how long review took.</p>
+            </div>
+          </div>
+          <ol class="triage-flow" aria-label="Workflow steps">
+            <li><span>01</span><h3>Check the request</h3><p>Make sure it has a request number and a message. Skip requests already processed.</p></li>
+            <li><span>02</span><h3>Write a draft</h3><p>Gemini reads the message and approved help articles, then suggests a topic and a reply.</p></li>
+            <li><span>03</span><h3>Check and save</h3><p>Check the request number, the topic, and any help articles the draft cites. Save it for review.</p></li>
+            <li><span>04</span><h3>Review the reply</h3><p>A support team member checks the facts and can approve, edit, or reject the draft.</p></li>
+          </ol>
+          <figure class="case-workflow" id="workflow-canvas">
+            <div class="case-workflow-map">
+              <img src="/automations/saas-request-triage/n8n-replay.png" alt="Screenshot of the steps in n8n. The left side checks requests, the middle drafts replies, and the right side checks and saves the results." width="2482" height="966" loading="lazy" decoding="async" />
+              <span class="case-workflow-marker" style="--x: 22%; --y: 36%" aria-hidden="true">01</span>
+              <span class="case-workflow-marker" style="--x: 54%; --y: 43%" aria-hidden="true">02</span>
+              <span class="case-workflow-marker" style="--x: 76%; --y: 45%" aria-hidden="true">03</span>
+            </div>
+            <figcaption>
+              <span>The numbers show which parts of the screenshot match steps 1–3 above.</span>
+              <a href="/automations/saas-request-triage/n8n-replay.png">Open full-size screenshot</a>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="triage-section" aria-labelledby="failure-title">
+        <div class="shell">
+          <div class="triage-editorial">
+            <h2 class="sv-h2" id="failure-title">What went wrong <em>and how I fixed it.</em></h2>
+            <div class="triage-prose">
+              <p>Test #48 looked successful at first. When I checked what was saved, 22 entries had no request number. The system could no longer tell which message each entry belonged to.</p>
+              <p>I fixed how the system carries the request number from step to step and added a check before saving. In test #50, I checked the saved drafts against the original requests and confirmed that earlier records were still there.</p>
+            </div>
+          </div>
+          <div class="triage-safety">
+            <h3>Why a person checks each reply</h3>
+            <p>One draft said a security issue had already been passed to the right team. That handoff hadn’t happened. The automatic checks missed the claim, so a person still needs to read what the reply promises.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="triage-section paper" id="verified-run" aria-labelledby="results-title">
+        <div class="shell">
+          <div class="triage-editorial">
+            <h2 class="sv-h2" id="results-title">What the tests <em>showed.</em></h2>
+            <div class="triage-prose">
+              <p>In the final test, the system handled 24 submissions. It saved 20 drafts, spotted two repeats, and rejected two submissions with missing information.</p>
+            </div>
+          </div>
+          <dl class="triage-results">
+            <div><dt>20 / 20</dt><dd><strong>Requests sorted into the expected topics</strong><span>Test #47 included five examples set aside until the final check.</span></dd></div>
+            <div><dt>19 / 20</dt><dd><strong>Draft replies passed the content check</strong><span>One draft suggested the product team would get the feedback. The system had no step to send it.</span></dd></div>
+            <div><dt>100 s → 45 s</dt><dd><strong>Less time to review an AI draft</strong><span>Median times across five requests. I compared handling each request from scratch with reviewing an AI draft.</span></dd></div>
+          </dl>
+          <p class="triage-limit">Two of those five drafts needed edits. I measured the time I spent reviewing and rereading. Editing time and costs are still unknown. Before trying this with a team, I’d ask someone new to handle a routine question and a security issue both ways, then compare their decisions and edits.</p>
+        </div>
+      </section>
+
+      <section class="triage-section" id="for-saas-teams" aria-labelledby="demonstrates-title">
+        <div class="shell">
+          <div class="triage-editorial">
+            <h2 class="sv-h2" id="demonstrates-title">What this shows <em>for a SaaS team.</em></h2>
+            <div class="triage-prose">
+              <p>The workflow is a practice project. The habits behind it are the ones a support or operations team needs every day.</p>
+            </div>
+          </div>
+          <ol class="triage-flow" aria-label="Skills this project demonstrates">
+            <li><span>01</span><h3>Testing on a fixed set</h3><p>24 requests, including repeats and broken ones, checked against the expected topics, with five examples held back for the final run.</p></li>
+            <li><span>02</span><h3>Failure analysis</h3><p>Test #48 reported success while 22 drafts had lost their request number. I found where the number dropped and added a check before saving.</p></li>
+            <li><span>03</span><h3>Regression check</h3><p>Test #50 confirmed the fix and that earlier records were still there, instead of trusting a green status.</p></li>
+            <li><span>04</span><h3>Escalation judgment</h3><p>A draft promised a security handoff that never happened. People review what a reply promises; the system only prepares it.</p></li>
+          </ol>
+          <div class="case-hire" aria-label="Next steps">
+            <p>Hiring for product support or SaaS operations?</p>
+            <div class="case-hire-actions">
+              <a class="btn btn-lime" href="mailto:dmitri.nour@gmail.com?subject=Role%3A%20Product%20support%20%2F%20SaaS%20operations">Discuss a role <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-ghost" href="/assets/Dmytro_Nour_Resume.pdf" type="application/pdf" download="Dmytro_Nour_Product_Support_CV.pdf">Download CV <span aria-hidden="true">↓</span></a>
+              <a class="link-arrow" href="/#cases">All case studies</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="sv-footer">
+      <div class="shell">
+        <span>© 2026 Dmytro Nour · Athens, Greece · works remotely · <a href="mailto:hello@dmytronour.work">hello@dmytronour.work</a></span>
+        <nav aria-label="Footer">
+          <a href="/websites">Websites</a>
+          <a href="/automations">Automations</a>
+          <a href="/apps">Apps &amp; Tools</a>
+          <a href="/videos">Videos</a>
+          <a href="/services">All services</a>
+          <a href="/services#pricing">Pricing</a>
+          <a href="/pay">Pay for a project</a>
+          <a href="/services#work">My work</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
