@@ -726,3 +726,28 @@ html:not(.js) .hoop-photo { clip-path: none; }
 .lab-more .more-products { margin-top: 8px; }
 .lab-more .more-title { font-size: clamp(24px, 2.2vw, 32px); }
 .more-title-lab { margin: clamp(48px, 6vw, 80px) 0 24px; }
+
+/* Bodyclimb case + quieter fourth case (10.11.2026) */
+.case-bc { display: grid; grid-template-columns: minmax(0, .5fr) minmax(0, 1fr); align-items: stretch; }
+.bc-visual { display: flex; align-items: center; justify-content: center; padding: clamp(24px, 3vw, 40px); background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(255, 178, 91, .22), transparent 70%), linear-gradient(180deg, #17130c, #0c0b09); border-right: 1px solid var(--line); }
+.bc-visual img { width: min(100%, 300px); height: auto; border-radius: 22px; box-shadow: 0 30px 60px rgba(0, 0, 0, .5), 0 0 0 1px rgba(255, 255, 255, .08); transition: transform .8s var(--ease); }
+.bc-visual:hover img { transform: translateY(-4px) rotate(-1deg); }
+.bc-copy { display: flex; flex-direction: column; gap: 18px; padding: clamp(28px, 4vw, 58px); }
+.case-bc h3 i { color: var(--amber); }
+.case-bc .case-lead { margin-top: -4px; }
+.case-bc .link-arrow { align-self: flex-start; }
+.bc-timeline { display: grid; grid-template-columns: 3fr 5fr 5fr 1.6fr; gap: 6px; }
+.bc-timeline li { display: flex; flex-direction: column; gap: 4px; padding: 12px 10px 10px; border-top: 3px solid var(--amber); background: rgba(255, 178, 91, .06); border-radius: 4px 4px 10px 10px; color: var(--muted); font: 500 10.5px/1.35 var(--font-mono); letter-spacing: .05em; text-transform: uppercase; }
+.bc-timeline li b { color: var(--text); font: 500 17px/1.1 var(--font-sans); letter-spacing: -.02em; text-transform: none; }
+.case-minor { grid-template-columns: minmax(0, .55fr) minmax(0, 1fr); }
+.case-minor h3 { font-size: clamp(26px, 2.4vw, 36px); }
+.case-minor .case-lead { font-size: 15px; }
+@media (max-width: 980px) {
+  .case-bc { grid-template-columns: 1fr; }
+  .bc-visual { border-right: 0; border-bottom: 1px solid var(--line); }
+  .bc-visual img { width: min(62%, 260px); }
+  .case-minor { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .bc-timeline { grid-template-columns: 1fr 1fr; }
+}

@@ -167,39 +167,12 @@
           <div class="section-head" data-reveal>
             <p class="kicker"><span>01</span>Case studies</p>
             <h2 id="work-title">Tested. Broken. <em>Fixed.</em></h2>
-            <p class="section-lead">Three pieces of work closest to support and SaaS operations. Each one shows what I checked, what went wrong and what is still unmeasured.</p>
+            <p class="section-lead">Two real products first, then the workflows I built to practise support operations. Each one shows what I checked, what went wrong and what is still unmeasured.</p>
           </div>
-
-          <article class="case case-tri" aria-labelledby="tri-title" data-reveal>
-            <div class="case-copy">
-              <div class="case-meta"><span>01 · Support operations</span><span>n8n + Gemini · Nov 2026</span></div>
-              <h3 id="tri-title">AI Support Triage<i>.</i></h3>
-              <p class="tri-sub">Testing, failure analysis and human review</p>
-              <p class="case-lead">A workflow that checks each incoming support request, sorts it by topic and drafts a reply from approved help articles. A person reviews every draft before anything is sent. Practice project, tested on 24 made-up requests.</p>
-              <dl class="case-stats">
-                <div><dt>Sorted right</dt><dd>20/20</dd></div>
-                <div><dt>Drafts passed</dt><dd>19/20</dd></div>
-                <div><dt>Review time</dt><dd>100→45s</dd></div>
-              </dl>
-              <ul class="case-points">
-                <li><b>Bad input</b> Two repeats recorded without overwriting the first draft. Two requests with missing data rejected, with the reason saved.</li>
-                <li><b>Bug found</b> Test #48 reported success, but 22 saved drafts had lost their request number. I traced it, fixed how the number passes between steps and added a check before saving.</li>
-                <li><b>Retest</b> In test #50 I matched every saved draft to its request and confirmed earlier records were intact.</li>
-                <li><b>Honest</b> Review time is from five requests only. Editing time and running costs are not measured yet, and the page says so.</li>
-              </ul>
-              <div class="case-links">
-                <a class="link-arrow" href="/automations/saas-request-triage">Read the case study <span aria-hidden="true">↗</span></a>
-              </div>
-            </div>
-            <a class="case-visual tri-visual" href="/automations/saas-request-triage" aria-label="Open the AI Support Triage case study">
-              <img src="automations/saas-request-triage/n8n-replay.png" alt="The n8n workflow from test #50: request check, draft writing and saving for review" width="2482" height="966" loading="lazy" decoding="async" />
-              <span class="tri-flow" aria-hidden="true"><span>Check request</span><span>Draft reply</span><span>Validate &amp; save</span><span>Human review</span></span>
-            </a>
-          </article>
 
           <article class="case case-cz" aria-labelledby="cz-title" data-reveal>
             <div class="case-copy">
-              <div class="case-meta"><span>02 · Flagship product</span><span>iOS + Web · 2025 — now</span></div>
+              <div class="case-meta"><span>01 · Flagship product</span><span>iOS + Web · 2025 — now</span></div>
               <h3 id="cz-title">CreatorZen<i>.</i></h3>
               <p class="case-lead">An AI content coach that tells creators what to post today — hook, script, caption and images ready to film — and plans around their energy so they keep posting without burning out.</p>
               <dl class="case-stats">
@@ -233,13 +206,60 @@
               </figure>
             </div>
           </article>
+          <article class="case case-bc" aria-labelledby="bc-title" data-reveal>
+            <a class="bc-visual" href="/portfolio#bodyclimb" aria-label="Watch the Bodyclimb ad">
+              <img src="portfolio/media/bodyclimb-a.jpg" alt="Bodyclimb ad frame: the app asks how many pull-ups you can do" width="720" height="1280" loading="lazy" decoding="async" />
+            </a>
+            <div class="bc-copy">
+              <div class="case-meta"><span>02 · Release QA</span><span>iOS · Oct 2026</span></div>
+              <h3 id="bc-title">Bodyclimb<i>.</i></h3>
+              <p class="case-lead">A pull-up program that starts from zero, adapts every session to your answers and works offline without an account. I took it from concept to App Store submission in 14 days, and Apple approved it.</p>
+              <ol class="bc-timeline" aria-label="14 days from concept to submission">
+                <li style="--n: 3"><b>3 days</b>research &amp; specs</li>
+                <li style="--n: 5"><b>5 days</b>guiding AI coding agents</li>
+                <li style="--n: 5"><b>5 days</b>QA &amp; fixes</li>
+                <li style="--n: 1"><b>1 day</b>release prep</li>
+              </ol>
+              <ul class="case-points">
+                <li><b>QA</b> A pre-mortem before any code, walkthroughs as different user personas, and each build checked on my own phone before upload.</li>
+                <li><b>Review</b> App Review rejected the store images under guideline 2.3.3 for not showing the app in use. I rebuilt them from real screens and resubmitted.</li>
+              </ul>
+              <a class="link-arrow" href="/portfolio#bodyclimb">Watch the app ad <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
 
-          <article class="case case-make" aria-labelledby="make-title" data-reveal>
+          <article class="case case-tri" aria-labelledby="tri-title" data-reveal>
+            <div class="case-copy">
+              <div class="case-meta"><span>03 · Support operations</span><span>n8n + Gemini · Nov 2026</span></div>
+              <h3 id="tri-title">AI Support Triage<i>.</i></h3>
+              <p class="tri-sub">Testing, failure analysis and human review</p>
+              <p class="case-lead">A workflow that checks each incoming support request, sorts it by topic and drafts a reply from approved help articles. A person reviews every draft before anything is sent. Practice project, tested on 24 made-up requests.</p>
+              <dl class="case-stats">
+                <div><dt>Sorted right</dt><dd>20/20</dd></div>
+                <div><dt>Drafts passed</dt><dd>19/20</dd></div>
+                <div><dt>Review time</dt><dd>100→45s</dd></div>
+              </dl>
+              <ul class="case-points">
+                <li><b>Bad input</b> Two repeats recorded without overwriting the first draft. Two requests with missing data rejected, with the reason saved.</li>
+                <li><b>Bug found</b> Test #48 reported success, but 22 saved drafts had lost their request number. I traced it, fixed how the number passes between steps and added a check before saving.</li>
+                <li><b>Retest</b> In test #50 I matched every saved draft to its request and confirmed earlier records were intact.</li>
+                <li><b>Honest</b> Review time is from five requests only. Editing time and running costs are not measured yet, and the page says so.</li>
+              </ul>
+              <div class="case-links">
+                <a class="link-arrow" href="/automations/saas-request-triage">Read the case study <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+            <a class="case-visual tri-visual" href="/automations/saas-request-triage" aria-label="Open the AI Support Triage case study">
+              <img src="automations/saas-request-triage/n8n-replay.png" alt="The n8n workflow from test #50: request check, draft writing and saving for review" width="2482" height="966" loading="lazy" decoding="async" />
+              <span class="tri-flow" aria-hidden="true"><span>Check request</span><span>Draft reply</span><span>Validate &amp; save</span><span>Human review</span></span>
+            </a>
+          </article>
+          <article class="case case-make case-minor" aria-labelledby="make-title" data-reveal>
             <a class="make-visual" href="/automations/fitness-plan-fulfillment" aria-label="Open the Make case study">
               <img src="automations/fitness-plan-fulfillment/make-scenario.png" alt="Archived Make scenario: questionnaire, plan generation, PDF rendering and delivery" width="2726" height="1266" loading="lazy" decoding="async" />
             </a>
             <div class="make-copy">
-              <div class="case-meta"><span>03 · Integrations</span><span>Make · own-product MVP</span></div>
+              <div class="case-meta"><span>04 · Integrations</span><span>Make · own-product MVP</span></div>
               <h3 id="make-title">Fitness plan automation</h3>
               <p class="case-lead">A Make scenario that turned a questionnaire into a personalised PDF plan and handed the link to the email tool: Tally → OpenAI → CloudConvert → Dropbox → MailerLite. I wrote the rules and prompt, designed the PDF and debugged the scenario.</p>
               <ul class="case-points compact">
@@ -392,7 +412,7 @@
         <div class="shell">
           <div class="section-head" data-reveal>
             <p class="kicker"><span>03</span>Experience</p>
-            <h2 id="story-title">From the cabin <em>to the codebase.</em></h2>
+            <h2 id="story-title">From customer service <em>to building products.</em></h2>
             <p class="section-lead">My path wasn't a straight line — which is exactly why I'm useful in the gaps between customers, product and tech.</p>
           </div>
 
@@ -439,38 +459,16 @@
         <div class="shell section-head" data-reveal>
           <p class="kicker"><span>04</span>How I work</p>
           <h2 id="method-title">Woven from the best. <em>Built to ship.</em></h2>
-          <p class="section-lead">Every ingredient exists; the combination doesn't. That's how I designed CreatorZen. I studied the best creator tools and habit apps, took the one mechanism each got right, and wove them around the question none of them asks: <strong>how much can you actually create today?</strong></p>
+          <p class="section-lead">I study the best products around a problem and take the one mechanism each gets right. For CreatorZen, three of them:</p>
         </div>
 
         <div class="shell receipt" data-reveal>
-          <div class="receipt-head">
-            <p class="kicker"><span>✳</span>The receipt</p>
-            <p>Compiled from my CreatorZen research notes — starting with <em>“Competitive landscape &amp; feature gaps”</em> — and checked line by line against the code that actually shipped.</p>
-          </div>
           <div class="receipt-table" role="table" aria-label="Products I studied, what they prove, and what I took for CreatorZen">
             <div class="receipt-row receipt-labels" role="row"><span role="columnheader">Source</span><span role="columnheader">What it proves</span><span role="columnheader">What I took</span></div>
             <div class="receipt-row" role="row"><span role="cell"><i style="--c: var(--coral)"></i>Duolingo</span><span role="cell">A character and a streak turn a tool into a daily habit.</span><span role="cell">Zenny — the camera mascot who picks today's idea — plus check-in streaks.</span></div>
             <div class="receipt-row" role="row"><span role="cell"><i style="--c: var(--violet)"></i>vidIQ</span><span role="cell">An idea needs a reason to believe it, not just a title.</span><span role="cell">“Why this idea”, built only from real signals. I skipped their numeric score on purpose — a made-up number is a hallucination with a progress bar.</span></div>
-            <div class="receipt-row" role="row"><span role="cell"><i style="--c: var(--amber)"></i>Later</span><span role="cell">Content pillars turn random posts into a strategy.</span><span role="cell">Your pillars are set in onboarding, and new ideas are generated inside them.</span></div>
             <div class="receipt-row" role="row"><span role="cell"><i style="--c: var(--cyan)"></i>Typefully</span><span role="cell">AI writing only works when it sounds like you.</span><span role="cell">Profile import: Apify + an LLM read your public profile, so day-one ideas already fit your niche and tone.</span></div>
-            <div class="receipt-row" role="row"><span role="cell"><i style="--c: var(--text)"></i>Predis.ai</span><span role="cell">The fewer steps from “nice idea” to “ready post”, the better.</span><span role="cell">One-tap plans: hook, script, caption and images on one screen.</span></div>
-            <div class="receipt-row" role="row"><span role="cell"><i style="--c: var(--blue)"></i>Captions</span><span role="cell">The script and the camera belong in one flow.</span><span role="cell">Scripts laid out line by line, teleprompter-style, inside the shooting plan.</span></div>
             <div class="receipt-row receipt-mine" role="row"><span role="cell"><i style="--c: var(--lime)"></i>My thread</span><span role="cell">No creator tool asks how much you can do today.</span><span role="cell">A 10-second check-in → Energy Score from 0 to 100 → today's load: 1, 2 or 4 tasks.</span></div>
-          </div>
-          <div class="receipt-foot">
-            <p class="receipt-skip"><span class="fit-label">Refused to copy</span>A full scheduler, a social inbox, a video editor, an AI avatar studio. Crowded, expensive — and they would have turned CreatorZen into one more tool instead of a calm second pilot.</p>
-            <div class="receipt-web">
-              <span class="fit-label">Same method, on creatorzen.ai</span>
-              <p>~45 sites studied, one move taken from each:</p>
-              <ul class="web-threads">
-                <li><b>Opal</b>cinematic dark hero</li>
-                <li><b>Wispr Flow</b>serif italics, cream × dark rhythm</li>
-                <li><b>Halide</b>objects floating around the phone</li>
-                <li><b>Gentler Streak</b>“rest counts too” tone</li>
-                <li><b>Finch</b>the mascot as the emotional centre</li>
-                <li><b>Bevel</b>QR download for desktop visitors</li>
-              </ul>
-            </div>
           </div>
         </div>
       </section>
