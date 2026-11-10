@@ -441,7 +441,7 @@ html:not(.js) .hoop-photo { clip-path: none; }
 .flight-track { fill: none; stroke: rgba(20, 22, 20, .28); stroke-width: 2; stroke-dasharray: 2 9; stroke-linecap: round; vector-effect: non-scaling-stroke; }
 .flight-done { fill: none; stroke: var(--ink); stroke-width: 2.4; stroke-linecap: round; vector-effect: non-scaling-stroke; }
 .flight-plane { position: absolute; left: 0; top: 0; width: 34px; height: 34px; margin: -17px 0 0 -17px; fill: var(--ink); filter: drop-shadow(0 6px 8px rgba(20, 22, 20, .25)); will-change: transform; }
-.flight-stops { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(14px, 2vw, 30px); margin-top: 26px; }
+.flight-stops { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(14px, 2vw, 30px); margin-top: 26px; }
 .flight-stops li { padding-top: 20px; border-top: 2px solid var(--ink-line); transition: border-color .5s ease; }
 .flight-stops li.is-reached { border-color: var(--ink); }
 .fs-year { display: block; color: var(--ink-muted); font: 500 12px/1 var(--font-mono); letter-spacing: .08em; }
@@ -754,3 +754,4 @@ html:not(.js) .hoop-photo { clip-path: none; }
   .bc-visual { min-height: 400px; padding: 26px 18px 18px; }
   .bc-phones { min-height: 340px; }
 }
+.case-pair.case-single { grid-template-columns: minmax(0, 640px); }
